@@ -1,690 +1,202 @@
 <!DOCTYPE html>
 <html>
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <title>Content Drive: AI Workflow for Google Sheets</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet">-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 
-  <!-----Start phan footer---------->
-  <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">--->
-  <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>--->
-  <!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-  <!-----End phan footer---------->
+  <!-- NEW: Updated Title -->
+  <title>Content Drive: The AI Content Engine for Google Sheets</title>
 
-  <!-- Script handle the Header -->
+  <!-- NEW: Cleaned up Bootstrap 5 CSS (only one version is needed) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
+  <!-- NEW: Google Fonts - Roboto and Google Sans for that "Google" feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
 
-  <!-- CSS Style -->
+  <!-- NEW: Custom CSS Style Block -->
   <style>
-    /*Style for Header & Nava*/
-    .carousel-item {
-      height: 65vh;
-      min-height: 350px;
-      background: no-repeat center center scroll;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
+    /*
+       * =================================================================================
+       * CONTENT DRIVE - CUSTOM MVP STYLESHEET
+       * This CSS is designed to be clean, modern, and aligned with Google's Brand Identity.
+       * =================================================================================
+       */
+
+    :root {
+      /* Google Brand Colors */
+      --google-blue: #4285F4;
+      --google-red: #DB4437;
+      --google-yellow: #F4B400;
+      --google-green: #0F9D58;
+
+      /* Greys & Text */
+      --text-primary: #202124;
+      /* Google's primary text color */
+      --text-secondary: #5f6368;
+      --background-light: #f8f9fa;
+      /* A light grey for section backgrounds */
+      --border-color: #dee2e6;
     }
 
-    /*End style for Header and Nava*/
+/* Add this to the top of your style block */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* The height of your navbar */
+}
 
-    /*Start Stytle cho Footer*/
-    /*footer*/
-    .col_white_amrc {
-      color: #FFF;
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-primary);
+  background-color: #fff;
+    /* --- THIS IS THE CRITICAL FIX for the layout overlap --- */
+    padding-top: 40px;
+}
+
+    /* --- Typography that feels like Google --- */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .navbar-brand,
+    .display-4,
+    .display-5 {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
     }
 
-    footer {
-      width: 100%;
-      background-color: #263238;
-      min-height: 250px;
-      padding: 10px 0px 25px 0px;
+    .lead {
+      color: var(--text-secondary);
+      font-size: 1.25rem;
     }
 
-    .pt2 {
-      padding-top: 40px;
-      margin-bottom: 20px;
+    /* --- Navigation Bar --- */
+    .navbar {
+      border-bottom: 1px solid var(--border-color);
     }
 
-    footer p {
-      font-size: 13px;
-      color: #CCC;
-      padding-bottom: 0px;
-      margin-bottom: 8px;
+    .navbar-brand {
+      color: var(--google-blue) !important;
     }
 
-    .mb10 {
-      padding-bottom: 15px;
+    /* --- Hero Section --- */
+    .hero {
+      padding: 6rem 0;
     }
 
-    .footer_ul_amrc {
-      margin: 0px;
-      list-style-type: none;
-      font-size: 14px;
-      padding: 0px 0px 10px 0px;
+    .hero .btn-primary {
+      background-color: var(--google-blue);
+      border-color: var(--google-blue);
+      padding: 0.75rem 2rem;
+      font-size: 1.1rem;
     }
 
-    .footer_ul_amrc li {
-      padding: 0px 0px 5px 0px;
+    .hero .btn-primary:hover {
+      background-color: #3367D6;
+      /* A slightly darker blue for hover */
+      border-color: #3367D6;
     }
 
-    .footer_ul_amrc li a {
-      color: #CCC;
+    .hero iframe {
+      border-radius: 0.5rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
     }
 
-    .footer_ul_amrc li a:hover {
-      color: #fff;
-      text-decoration: none;
+    /* --- Feature Highlight / How it Works Section --- */
+    #feature-highlight {
+      background-color: var(--background-light);
     }
 
-    .fleft {
-      float: left;
+    #feature-highlight h2 {
+      margin-bottom: 1rem;
+      /* Adds a little space below the main headline */
     }
 
-    .padding-right {
-      padding-right: 10px;
-    }
-
-    .footer_ul2_amrc {
-      margin: 0px;
-      list-style-type: none;
-      padding: 0px;
-    }
-
-    .footer_ul2_amrc li p {
-      display: table;
-    }
-
-    .footer_ul2_amrc li a:hover {
-      text-decoration: none;
-    }
-
-    .footer_ul2_amrc li i {
-      margin-top: 5px;
-    }
-
-    .bottom_border {
-      border-bottom: 1px solid #323f45;
-      padding-bottom: 20px;
-    }
-
-    .foote_bottom_ul_amrc {
-      list-style-type: none;
-      padding: 0px;
-      display: table;
-      margin-top: 10px;
-      margin-right: auto;
-      margin-bottom: 10px;
-      margin-left: auto;
-    }
-
-    .foote_bottom_ul_amrc li {
-      display: inline;
-    }
-
-    .foote_bottom_ul_amrc li a {
-      color: #999;
-      margin: 0 12px;
-    }
-
-    .social_footer_ul {
-      display: table;
-      margin: 15px auto 0 auto;
-      list-style-type: none;
-    }
-
-    .social_footer_ul li {
-      padding-left: 20px;
-      padding-top: 10px;
-      float: left;
-    }
-
-    .social_footer_ul li a {
-      color: #CCC;
-      border: 1px solid #CCC;
-      padding: 8px;
-      border-radius: 50%;
-    }
-
-    .social_footer_ul li i {
-      width: 20px;
-      height: 20px;
-      text-align: center;
-    }
-
-/* START - CSS for Before and After section */
-
-/* END - CSS for Before and After section */
-
-    /* Credit to https://bootsnipp.com/snippets/bxDBA */
-
-    /*END style cho Footer*/
-    /* Family font for the whole page 
-    @import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Lato&display=swap");
-
-    body {
-      font-family: "Lato", sans-serif;
-    } */
-    /* Existing CSS styles */
-    .demo {
-      background: #FAD2C8;
-      padding: 30px 0
-    }
-
-    .demo h5 {
-      text-align: center;
-      padding: 20px 0
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    .pricingTable {
-      padding: 25px 10px 70px;
-      margin: 0 15px;
-      text-align: center;
-      z-index: 1;
-      position: relative
-    }
-
-    .pricingTable:after,
-    .pricingTable:before {
-      content: "";
-      position: absolute;
-      left: 0
-    }
-
-    .pricingTable .price-value .amount {
-      display: inline-block;
-      font-size: 50px;
-      font-weight: 700
-    }
-
-    .pricingTable .price-value .month {
-      display: block;
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 10px;
-      text-transform: uppercase
-    }
-
-    .pricingTable:before {
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      top: 0;
-      z-index: -1;
-      -webkit-clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
-      clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0)
-    }
-
-    .pricingTable:after {
-      width: 70px;
-      height: 30px;
-      background: #1daa72;
-      margin: 0 auto;
-      top: 70px;
-      right: 0;
-      -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
-      clip-path: polygon(50% 100%, 0 0, 100% 0)
-    }
-
-    .pricingTable .title {
-      padding: 15px 0;
-      margin: 0 -25px 30px;
-      background: #1daa72;
-      font-size: 25px;
-      font-weight: 600;
-      color: #fff;
-      text-transform: uppercase;
-      position: relative
-    }
-
-    .pricingTable .title:after,
-    .pricingTable .title:before {
-      border-top: 15px solid #51836d;
-      border-bottom: 15px solid transparent;
-      position: absolute;
-      bottom: -30px;
-      content: ""
-    }
-
-    .pricingTable .title:before {
-      border-left: 15px solid transparent;
-      left: 0
-    }
-
-    .pricingTable .title:after {
-      border-right: 15px solid transparent;
-      right: 0
-    }
-
-    .pricingTable .price-value {
-      margin-bottom: 25px;
-      color: #1daa72
-    }
-
-    .pricingTable .currency {
-      display: inline-block;
-      font-size: 30px;
-      vertical-align: top;
-      margin-top: 8px
-    }
-
-    .price-value .amount {
-      display: inline-block;
-      font-size: 50px;
-      font-weight: 700
-    }
-
-    .price-value .month {
-      display: block;
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 10px;
-      text-transform: uppercase
-    }
-
-    .pricingTable .pricing-content {
-      padding: 0;
-      margin: 0 0 25px;
-      list-style: none;
-      border-top: 1px solid #8f8f8f;
-      border-bottom: 1px solid #8f8f8f
-    }
-
-    .pricingTable .pricing-content li {
-      font-size: 16px;
-      /* 17px*/
-      color: #8f8f8f;
-      line-height: 55px
-    }
-
-    .pricingTable .pricingTable-signup {
-      display: inline-block;
-      padding: 10px 30px;
-      background: #1daa72;
-      font-size: 18px;
-      font-weight: 600;
-      color: #fff;
-      overflow: hidden;
-      position: relative;
-      transition: all .7s ease 0s
-    }
-
-    .pricingTable .pricingTable-signup:before {
-      content: "";
-      display: inline-block;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transform: translate(0, 100%);
-      transition: all .6s ease-in-out 0s
-    }
-
-    .pricingTable .pricingTable-signup:hover:before {
-      opacity: 1;
-      transform: translate(0, -100%)
-    }
-
-    .pricingTable.blue .pricingTable-signup,
-    .pricingTable.blue .title,
-    .pricingTable.blue:after {
-      background: #49b0ca
-    }
-
-    .pricingTable.blue .title:after,
-    .pricingTable.blue .title:before {
-      border-top: 15px solid #407a88
-    }
-
-    .pricingTable.blue .price-value {
-      color: #49b0ca
-    }
-
-    .pricingTable.pink .pricingTable-signup,
-    .pricingTable.pink .title,
-    .pricingTable.pink:after {
-      background: #f06ace
-    }
-
-    .pricingTable.pink .price-value {
-      color: #f06ace
-    }
-
-    .pricingTable.pink .title:after,
-    .pricingTable.pink .title:before {
-      border-top: 15px solid #773667
-    }
-
-    @media only screen and (max-width:990px) {
-      .pricingTable {
-        margin-bottom: 30px
-      }
-    }
-
-    /* Add new styles for the highlight element */
-    .highlight {
-      background-color: rgb(255, 255, 255);
-      /* yellow */
-      padding: 10px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    /** CSS for Discount Box*/
-    .discount-container {
-      margin: 20px auto;
-      max-width: 400px;
-      display: flex;
-      align-items: center;
-    }
-
-    .discount-container label {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .discount-container .input-container {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .discount-container input[type="text"] {
-      padding: 5px;
-      margin-right: 10px;
-    }
-
-    .discount-container button {
-      padding: 5px 10px;
-      background-color: #1daa72;
-      color: #fff;
+    #feature-highlight .card {
       border: none;
-      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
     }
 
-    .discount-container p {
-      margin-top: 10px;
-      font-size: 14px;
-      color: red;
+    #feature-highlight .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .1);
     }
 
-
-    /* Add styles for the FAQ section */
-    .faq-section {
-      margin-top: 50px;
-      /* margin-left: 30px;  Adjust the left margin as desired */
-      text-align: center;
-      /* Center-align the content #FAD2C8 */
-      background: #FAD2C8;
-      padding: 30px 0
+    #feature-highlight .card h3 {
+      color: var(--google-blue);
     }
 
-    .faq-heading {
+    /* --- Empathy Section --- */
+    #empathy-section .list-unstyled li {
+      border-left: 4px solid var(--google-green);
+    }
 
-      font-size: 24px;
+    /* --- Pricing Section --- */
+    #price {
+      background-color: #fff;
+    }
+
+    #price .card {
+      border-color: var(--google-blue);
+    }
+
+    #price .btn-primary {
+      background-color: var(--google-blue);
+      border-color: var(--google-blue);
+    }
+
+    #price .list-unstyled li::before {
+      content: '✔';
+      /* Use a text-based checkmark */
+      color: var(--google-green);
       font-weight: bold;
-      margin-bottom: 20px;
-      text-align: center;
-      /* Center-align the heading */
-    }
-
-    .faq-item {
-      margin-bottom: 20px;
-    }
-
-    .faq-question {
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .faq-answer {
-      display: none;
-      text-align: left;
-
-    }
-
-    .faq-icon {
-      /* display: inline-block; */
-      /* margin-right: 5px; */
-      /* cursor: pointer; */
-
       display: inline-block;
-      margin-right: 5px;
-      cursor: pointer;
-      border-radius: 50%;
-      /* Add border-radius to create a circle */
-      border: 5px solid #000;
-      /* Add border to the circle */
-      padding: 3px;
-      /* Adjust padding to control the size of the circle */
-
+      width: 1em;
+      margin-left: -1em;
     }
 
-    .faq-list {
-      list-style: none;
-      padding: 5px;
+    #price .list-unstyled {
+      padding-left: 1.5em;
+      /* Add padding to align text after the checkmark */
     }
 
-    .question {
-      font-weight: bold;
-      cursor: pointer;
-      margin-left: 100px;
-      /* Adjust the left margin as desired */
-      margin-bottom: 20px;
-      /* Double the distance between questions */
-      text-align: left;
-      /*flex-wrap: wrap; */
-
+    /* --- FAQ Section --- */
+    #faq-section {
+      background-color: var(--background-light);
     }
 
-    /* CSS icon in FAQ section */
-    .toggle-icon {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      text-align: center;
-      line-height: 30px;
-      border-radius: 50%;
-      border: 2px solid #49b0ca;
-      padding: 3px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      color: #49b0ca;
-      /* Set the color of the "+" icon */
-    }
-
-    .toggle-icon:hover {
-      animation: bounce 0.5s;
-
-      align-items: center;
-      justify-content: center;
-    }
-
-    @keyframes bounce {
-      0% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.2);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    .answer {
-      display: none;
-      margin-bottom: 50px;
-      margin-left: 100px;
-      /*Adjust the left margin as desired */
-      /* */
-      text-align: justify;
-      /* flex-wrap: wrap;  */
-      /* align-content: left; */
-    }
-
-    /* Add styles for the expanded question */
-    .question.expanded {
-      font-weight: bold;
-      text-align: left;
-      align-content: left;
-
-    }
-
-    .question.expanded .toggle-icon {
-      transform: rotate(45deg);
-    }
-
-    .answer.expanded {
-      display: block;
-    }
-
-    /* Styles for Feature Highlight section */
-    .feature-highlight {
-      /* Feature highlight section styles */
-      margin-top: 10px;
-      /* margin-left: 30px;  Adjust the left margin as desired */
-      text-align: center;
-      /* Center-align the content #FAD2C8 */
-      background: rgb(255, 254, 254);
-      padding: 5px 0;
-
-    }
-
-    /* Centering the tabs */
-    .feature-highlight-tabs {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .feature-highlight-tab {
-      /* Tab styles */
-      padding: 10px 20px;
-      border: none;
+    .accordion-button:not(.collapsed) {
       color: #fff;
-      cursor: pointer;
-      opacity: 1;
-      transition: 0.3s;
-      background-color: #1daa72;
-      /* Feature 1 button background color */
-      border-radius: 6px;
+      background-color: var(--google-blue);
     }
 
-    .feature-highlight-tab:nth-child(2) {
-      background-color: #f06ace;
-      /* Feature 2 button background color */
+    .accordion-button:focus {
+      box-shadow: 0 0 0 0.25rem rgba(66, 133, 244, 0.25);
     }
 
-    .feature-highlight-tab:nth-child(3) {
-      background-color: #49b0ca;
-      /* Feature 3 button background color */
+    /* --- Footer --- */
+    .footer {
+      background-color: #202124;
+      /* Dark grey, consistent with Google products */
     }
 
-    /* Apply fading out effect on hover */
-    .feature-highlight-tab:hover {
-      opacity: 0.6;
+    .footer .text-white-50 {
+      color: #9aa0a6 !important;
+      /* Google's secondary dark-theme text color */
     }
 
-    /* Styles for the tab content */
-    .feature-highlight-content {
-      display: none;
-      text-align: left;
-      /* Align text to the left */
-      background: #fff;
-      /* White background */
-      margin-left: 100px;
-      /* Add left margin */
-    }
-
-    /* Styles for the text content */
-    .feature-content {
-
-      padding: 20px;
-    }
-
-
-    .feature-content ul {
-      padding-left: 20px;
-      /* Adjust the desired left padding */
-    }
-
-    .feature-content li {
-      margin-bottom: 10px;
-      /* Adjust the desired distance between <li> tags */
-    }
-
-    /* CSS of List of feature */
-
-    .list-of-features {
-      margin-top: 50px;
-      /* margin-left: 30px;  Adjust the left margin as desired */
-      text-align: left;
-      /* Center-align the content #FAD2C8 */
-      background: #FAD2C8;
-      padding: 30px 0
-    }
-
-    #list-of-features h2 {
-
-      font-size: 32px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-align: center;
-      /* Center-align the heading */
-    }
-
-    #list-of-features p {
-
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-align: center;
-      /* Center-align the heading */
-    }
-
-    #list-of-features table {
-      margin-left: 10px;
-      background-color: #f5f5f5;
-      text-align: left;
-    }
-
-    #list-of-features tr {
-      text-align: left;
-      padding: 10px;
-    }
-
-    #list-of-features th {
-      background-color: #FAD2C8;
-    }
-
-    #list-of-features td {
-      text-align: left;
-      padding: 10px;
-    }
-
-    #list-of-features ul {
-      text-align: left;
-      padding: 10px;
+    .footer a.text-white-50:hover {
+      color: #fff !important;
     }
   </style>
 
@@ -695,1122 +207,305 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">AC2F</a>
+      <!-- NEW: Update the Brand Name -->
+      <a class="navbar-brand" href="#"><strong>Content Drive</strong></a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
+          <!-- NEW: Simplified Menu for MVP -->
           <li class="nav-item active">
-            
             <a class="nav-link" href="#header-container" onclick="scrollToSection('#header-container')">Home</a>
           </li>
           <li class="nav-item">
-            
-            <a class="nav-link" href="#how-it-works" onclick="scrollToSection('#feature-highlight')">How it Works</a>
+            <a class="nav-link" href="#feature-highlight" onclick="scrollToSection('#feature-highlight')">How it
+              Works</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="#list-of-features" onclick="scrollToSection('#list-of-features')">Features</a>
+            <a class="nav-link" href="#price" onclick="scrollToSection('#price')">Pricing & Signup</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="#price" onclick="scrollToSection('#price')">Price</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="#faq-section" onclick="scrollToSection('#faq-section')">FAQ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://timkhachhang.net/blog/category/auto-create-folder-and-file/">Blog</a>
+            <a class="nav-link" href="#faq-section" onclick="scrollToSection('#faq-section')">FAQ</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
- 
- <!--START - HEADER section OPTION 1-->
-  <section id="header-container">
-  <div class="header-container">
-    <header>
 
-    </header>
-  </div>
-  <div class="container hero">
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">                       
-                        <div class="embed-responsive embed-responsive-16by9">
 
-                          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UOMVRuD4jdQ" title="Automated Google Drive from Google Sheets" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-                          </iframe>
-                        </div>
-                    </div>
-                </div>
-  </div>
-</section> 
- <!--END - HEADER section OPTION 1-->
 
- <!--START - BEFORE And AFTER Section-->
-
-<!-- END - BEFORE And AFTER Section-->
-
-  <!-- Page Content 
-  <section class="py-5">
-    <div class="container">
-      <h1 class="fw-light">Half Page Image Slider</h1>
-      <p class="lead">The background images for the slider are set directly in the HTML using inline CSS. The images
-        in this snippet are from <a href="https://unsplash.com">Unsplash</a>!</p>
-    </div>
-  </section> -->
-
-  <!-- START HOW IT WORK section-->
-  <section id="feature-highlight">
-
-    <div class="feature-highlight">
-
-      <h2>Automate Folder Creation, File Generation, and Text Replacement in Google Drive</h2>
-    </div>
-    <div class="feature-highlight">
-      <!-- Tab links -->
-      <div class="feature-highlight-tabs">
-        <button class="feature-highlight-tab" onclick="openTab(event, 'feature1')"><b>Auto-Created Folders and
-            Child-Folders</b></button>
-        <button class="feature-highlight-tab" onclick="openTab(event, 'feature2')"><b>Auto-Created Files from
-            Templates</b></button>
-        <button class="feature-highlight-tab" onclick="openTab(event, 'feature3')"><b>Auto-Replaced Text in new
-            Files</b>
-        </button>
-      </div>
-
-      <!-- Tab content -->
-      <div id="feature1" class="feature-highlight-content" style="display: block;">
-        <div class="feature-content">
-
-          <h5>Automatically create new folders in Google Drive from your Google Sheets.</h5>
-
-          <ul>
-            <li>The new folders can contain multiple subfolders within them. Maximum of 10 subfolders can be created at
-              once.</li>
-            <li>Customize the structure of the new folders and its subfolders according to your preference. Maximum of 3
-              levels: Parent -> Children Folders -> subChildren folders.</li>
-            <li>Utilize sequential numbering on Google Sheets to define the structure of the subfolders.</li>
-            <li>Set up the folder structure once and enjoy its repeated usage in the future.</li>
-            <li>Centralize the storage of all folder information within a single Google Sheets document. This
-              information
-              includes created date, name, link to folder, creator, and more.</li>
-          </ul>
-          <p><b><a href="https://timkhachhang.net">Click here</a></b> to explore <b>Why</b> these feaure<b> secure more
-              time and money</b> for your team. </p>
-        </div>
-      </div>
-
-      <div id="feature2" class="feature-highlight-content">
-        <div class="feature-content">
-
-          <h5>Automatically create new files when creating the new folder in Google Drive.</h5>
-
-          <ul>
-            <li>Automatically create new files and place them in the newly created folder.</li>
-            <li>The new files are generated from commonly used template files that you and your company utilize.</li>
-            <li>Option to automatically add a new file to multiple existing folders.</li>
-            <li>Option to create multiple new files within each folder and subfolder.</li>
-            <li>Sequential numbering on Google Sheets to determine the position of new files within the folder or
-              subfolders.</li>
-            <li>Centralize the storage of all files's information in a single Google Sheets document.</li>
-            <li>Set up initially and reuse multiple times thereafter.</li>
-          </ul>
-          <p><b><a href="https://timkhachhang.net">Click here</a></b> to explore <b>Why</b> these feaure<b> secure more
-              time and money</b> for your team. </p>
-        </div>
-      </div>
-
-      <div id="feature3" class="feature-highlight-content">
-        <div class="feature-content">
-
-          <h5>When auto-created new files in Google Drive:</h5>
-
-          <ul>
-            <li>Automatically replace text segments in newly generated files.</li>
-            <li>Customize and set up replacement fields in the new file. Maximum of 5 replacement fields.</li>
-            <li>Utilize Google Sheets to configure the desired replacement fields.</li>
-            <li>Centralize the storage of all replacement field information associated with each file in a single Google
-              Sheets document.</li>
-            <li>Set up initially and reuse multiple times thereafter.</li>
-          </ul>
-          <p><b><a href="https://timkhachhang.net">Click here</a></b> to explore <b>Why</b> these feaure<b> secure more
-              time and money</b> for your team. </p>
-        </div>
-      </div>
-    </div>
-    <!-- VIDEO https://www.youtube.com/embed/videoseries?list=PLWaIL_RL14zvRJ_gpBCTiU7FazwgKAvQy -->
-    <div align="center">
-      <iframe width="560" height="315"
-        src="https://www.youtube.com/embed/uHW5DNpcGvI"
+  <!-- START - FINAL, DEFINITIVE HERO SECTION -->
+<section id="header-container" class="py-5">
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <!-- Text Content -->
+        <h1 class="display-4 fw-bold">Stop the Content Chaos.</h1>
+        <p class="lead mb-4">Turn your messy Google Sheets into an AI-powered Content Machine. Go from a single idea to a fully-briefed content campaign in minutes.</p>
         
-        title="Auto create folders and files on Google Drive" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
+        <!-- Primary Call-to-Action Button -->
+        <a href="[YOUR_PAYPAL_SIGNUP_LINK_HERE]" class="btn btn-primary btn-lg mb-5">Get Your Free Beta License</a>
+      </div>
     </div>
+    <div class="row justify-content-center">
+      <!-- THIS IS THE FIX: The video is now in a wider column -->
+      <div class="col-lg-10">
+        <!-- The Demo Video -->
+        <!-- THIS IS THE FIX: Using Bootstrap 5's 'ratio' and 'ratio-16x9' classes -->
+<div class="ratio ratio-16x9">
+  <!-- IMPORTANT: You will need to replace this video link with your new demo video -->
+  <iframe src="https://www.youtube.com/embed/UOMVRuD4jdQ" title="Content Drive - How it Works" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+  </iframe>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END - FINAL, DEFINITIVE HERO SECTION -->
 
-  </section> <!-- END: HOW IT WORK section -->
 
-  <section id="header-highlight">
-    <!-- Add the highlight element with the discount code input box -->
-    <div class="highlight">
-
-      <!--<h5> Get a premium license today and secure more time for your team to focus on important tasks from now on.</h5>-->
-      <!-- <p>Discover the impact of ACF2 on existing clients in terms of time savings and the elimination of manual tasks when working with Google Drive. Explore our research to learn more about how ACF2 can revolutionize your productivity and streamline your workflow.</p> 
-    -->
+  <!-- START BLOCK 2: YOUR NEW WORKFLOW -->
+  <section id="feature-highlight" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1 text-center">
+          
+          <h2 class="display-5 fw-bold">
+            
+            From <span style="color: #4285F4;">Strategy</span> to <span style="color: #DB4437;">Content Roadmap</span> with AI
+            
+          </h2>
+          <p class="lead text-muted mb-5">Content Drive transforms your manual process into a seamless, AI-powered
+            pipeline.</p>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Step 1 Card -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center p-4">
+            <!-- NEW: Merged heading. The number is now part of the h4 tag -->
+            <h4 class="card-title fw-bold mb-3">From Strategy to Structure</h4>
+            <p class="card-text">Stop letting great ideas die in messy notes. Our AI Strategy Refiner takes your raw input and instantly transforms it into a professional, six-part strategic brief that guides your entire workflow.</p>
+          </div>
+        </div>
+        <!-- Step 2 Card -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center p-4">
+            <!-- NEW: Merged heading -->
+            <h4 class="card-title fw-bold mb-3">Brainstorm & Prioritize with AI</h4>
+            <p class="card-text">Use your approved strategy to fuel an AI-powered brainstorm. The Idea Lab generates a list of high-impact topics and scores them, so you always know you're working on the right content.</p>
+          </div>
+        </div>
+        <!-- Step 3 Card -->
+        <div class="col-md-4">
+          <div class="card h-100 text-center p-4">
+            <!-- NEW: Merged heading -->
+            <h4 class="card-title fw-bold mb-3">Solve the "Blank Page" Problem</h4>
+            <p class="card-text">Go from a prioritized idea to a complete writer's brief in a single click. The AI generates a detailed outline, objectives, and a call-to-action, ready for your creative team to execute instantly.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+  <!-- END BLOCK 2 -->
 
-  <!-- START: PRICE TABLE section -->
-  <section id="price">
 
-    <div class="demo">
-      <div class="container">
+  <!-- START BLOCK 3: EMPATHY / "SOUND FAMILIAR?" -->
+  <section id="empathy-section" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+          <h2 class="display-5 fw-bold">Sound Familiar?</h2>
+          <p class="lead text-muted mb-4">Content Drive was built for the overwhelmed marketer who's juggling too much.
+          </p>
+          <ul class="list-unstyled text-start">
+            <li class="mb-3 p-3 bg-white rounded shadow-sm">✔️ You're the entire marketing team, trying to manage a
+              hundred "great ideas" from across the company.</li>
+            <li class="mb-3 p-3 bg-white rounded shadow-sm">✔️ Your 'content calendar' is a chaotic spreadsheet that
+              feels more like a graveyard for good intentions.</li>
+            <li class="mb-3 p-3 bg-white rounded shadow-sm">✔️ You know you need a better system, but you don't have the
+              time to build one or the budget for an expensive platform.</li>
+            <li class="mb-3 p-3 bg-white rounded shadow-sm">✔️ You spend more time managing the process than you do
+              creating great content.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END BLOCK 3 -->
 
-        <h5> Get a premium license today and secure more time for your team to focus on important tasks from now on.
-        </h5>
 
-        <div class="row">
-          <div class="col-md-4 col-sm-6">
-            <div class="pricingTable">
-              <h3 class="title">PERSONAL</h3>
-              <p><b>Optimize your time</b></p>
-              <div class="price-value">
-                <span class="currency">$</span>
-                <span class="amount">99</span>
-                <span class="month">/01 user</span>
+  <!-- START BLOCK 4: PRICING (MVP - FREE BETA) -->
+  <section id="price" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+          <h2 class="display-5 fw-bold">Get Your Free Beta License</h2>
+          <p class="lead text-muted mb-4">
+            We are launching Content Drive with a limited-time free beta. Get full access to all AI features and help us
+            shape the future of content workflows.
+            Your feedback is invaluable.
+          </p>
+          <!-- This is a simplified pricing section. We will reuse your existing PayPal logic -->
+          <div class="card shadow-lg">
+            <div class="card-body p-5">
+              <h3 class="card-title fw-bold">BETA PLAN</h3>
+              <div class="price-value my-4">
+                <span class="display-4 fw-bold">Free</span>
+                <span class="text-muted">/ for a limited time</span>
               </div>
-              <ul class="pricing-content">
-                <li><b>Lifetime</b> access.</li>
-                <li><b>Unlimited</b> feature usage.</li>
-                <li><b>Support</b>: Email</li>
+              <ul class="list-unstyled text-start mb-4">
+                <li class="mb-2">Full access to all AI workflow steps.</li>
+                <li class="mb-2">AI-Powered Strategy Refinement.</li>
+                <li class="mb-2">AI-Powered Brainstorming & Prioritization.</li>
+                <li class="mb-2">AI-Powered Brief & Outline Generation.</li>
+                <li class="mb-2">Direct influence on the product roadmap.</li>
               </ul>
-              <div class="paypal-button" id="paypal-button-1" data-price="99.00" data-product-name="PERSONAL">
-                <a class="paypal-button-text">Order Now</a>
+              <!-- We reuse your existing PayPal button class and ID for integration -->
+              <div class="paypal-button" id="paypal-button-1" data-price="0.00"
+                data-product-name="Content Drive - Beta License">
+                <a class="btn btn-primary btn-lg w-100">Get Your Free Beta License Now</a>
               </div>
-
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <div class="pricingTable pink">
-              <h3 class="title">TEAM</h3>
-              <p><b>Enhance team efficiency</b></p>
-              <div class="price-value">
-                <span class="currency">$</span>
-                <span class="amount">299</span>
-                <span class="month">/05 users</span>
-              </div>
-              <ul class="pricing-content">
-                <li><b>Lifetime</b> access</li>
-                <li><b>Unlimited</b> feature usage</li>
-                <li><b>Support</b>: Email, Chat</li>
-              </ul>
-              <div class="paypal-button" id="paypal-button-2" data-price="299.00" data-product-name="TEAM">
-                <a class="paypal-button-text">Order Now</a>
-              </div>
-
-
-
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6">
-            <div class="pricingTable blue">
-              <h3 class="title">GROWTH</h3>
-              <p><b>Drive company productivity</b></p>
-              <div class="price-value">
-                <span class="currency">$</span>
-                <span class="amount">499</span>
-                <span class="month">/10 users</span>
-              </div>
-              <ul class="pricing-content">
-                <li><b>Lifetime</b> access</li>
-                <li><b>Unlimited</b> feature usage</li>
-                <li><b>Support</b>: Email,Chat, Phone</li>
-              </ul>
-              <div class="paypal-button" id="paypal-button-1" data-price="499.00" data-product-name="GROWTH">
-                <a class="paypal-button-text">Order Now</a>
-              </div>
-
             </div>
           </div>
         </div>
       </div>
-
-
-      <!-- Add the discount container -->
-      <h5 class="discount-container">Have a discount code? Apply it below.</h5>
-      <div class="discount-container">
-
-        <label for="discount-code">Discount code:</label>
-        <div class="input-container">
-          <input type="text" id="discount-code" placeholder="Enter your discount code">
-          <button type="button" id="apply-discount">Apply</button>
-        </div>
-
-      </div>
-      <p class="discount-container" id="discount-error" style="color: rgb(255, 0, 0)"></p>
-    </div>
-  </section> <!-- END PRICE TABLE Section -->
-
-
-
-  <!-- START: List of FEATURES section -->
-  <section id="list-of-features">
-    <div class="container mt-3">
-      <h2>List of Features</h2>
-
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>Features</th>
-            <th>License</th>
-            <th>Automated folder creation</th>
-            <th>Automated file generation</th>
-            <th>Change template file</th>
-            <th>Automated-replace text in files</th>
-            <th>Store info</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- ROW 01 -->
-          <tr>
-            <td>
-              <ul>
-                <li><strong>MODE 01</strong></li>
-                <li><strong>MODE 02</strong></li>
-                <li><strong>MODE 03</strong></li>
-                <li><strong>MODE 04</strong></li>
-              </ul>
-            </td>
-            <td>
-              <ul><strong>Free</strong></ul>
-            </td>
-            <td>
-
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-
-                  <li><strong>Fixed</strong> folder structure.</li>
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-
-                  <li>
-                    <strong><= 10</strong> files per creation.</li>
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#10060;</p>
-                  <!--no support UTF8 Char-->
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-
-              </label>
-            </td>
-          </tr>
-          <!--END row 01- Start ROW 02 -->
-          <tr>
-            <td>
-              <ul>
-                <li><strong>MODE 05</strong></li>
-                <li><strong>MODE 06</strong></li>
-              </ul>
-            </td>
-            <td>
-              <ul><strong>Free</strong></ul>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                  <li><strong>
-                      <= 30</strong> folders per creation.</li>
-
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                  <li><strong>
-                      <= 30</strong> files per creation.</li>
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#10060;</p>
-                  <!--no support UTF8 Char-->
-
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-              </label>
-            </td>
-          </tr>
-          <!--END row 02- Start ROW 03 -->
-
-          <!--END row 03- Start ROW 04 -->
-          <tr>
-            <td>
-              <ul>
-                <li><strong>MODE 07</strong></li>
-              </ul>
-            </td>
-            <td>
-              <ul><strong style="color:red;">Premium</strong></ul>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                  <li><strong>Fixed</strong> folder structure.</li>
-                  <li><strong>Add</strong> up-to 10 files per folder.</li>
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                  <li><strong>Up-to 50 </strong>files per creation.</li>
-
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#10060;</p>
-                  <!--no support UTF8 Char-->
-
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-              </label>
-            </td>
-          </tr>
-          <!--END row 04- Start ROW 05 -->
-          <tr>
-            <td>
-              <ul>
-                <strong>
-                  <li>MODE 08
-                </strong></li>
-              </ul>
-            </td>
-            <td>
-              <ul><strong style="color:red;">Premium</strong></ul>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                  <li><strong style="color:red;">Flexible</strong> to design folder structure.</li>
-                  <li><strong>Add</strong> up-to 10 files per folder.</li>
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                  <li><strong>Up-to 50 </strong>files per creation.</li>
-
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#10060;</p>
-                  <!--no support UTF8 Char-->
-
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-              </label>
-            </td>
-          </tr>
-          <!--END row 05- Start ROW 06 -->
-          <tr>
-            <td>
-              <ul>
-                <strong>
-                  <li>MODE 09
-                </strong></li>
-              </ul>
-            </td>
-            <td>
-              <ul><strong style="color:red;">Premium</strong></ul>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                  <li><strong style="color:red;">Flexible</strong> to design folder structure.</li>
-                  <li><strong>Add</strong> up-to 10 files per folder.</li>
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                  <li><strong>Up-to 50 </strong>files per creation.</li>
-
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-              </label>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <ul>
-                <li><strong>MODE 05-MAX</strong></li>
-                <li><strong>MODE 06-MAX</strong></li>
-              </ul>
-            </td>
-            <td>
-              <ul><strong>Premium</strong></ul>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                  <li><strong>
-                      up-to 200</strong> folders per creation.</li>
-
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                  <li><strong>
-                    up-to 200</strong> files per creation.</li>
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#10060;</p>
-                  <!--no support UTF8 Char-->
-
-                </ul>
-
-              </label>
-            </td>
-            <td>
-              <label>
-                <ul>
-                  <p>&#x2714;</p>
-                  <!--support UTF8 Char -->
-              </label>
-            </td>
-          </tr>
-          <!--END row 06- Start ROW 07 -->
-          <!-- Add more rows as needed -->
-        </tbody>
-      </table>
     </div>
   </section>
+  <!-- END BLOCK 4 -->
 
-  <!-- END: List of FEATURES section -->
 
+  <!-- START BLOCK 5: FAQ -->
+  <section id="faq-section" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <h2 class="text-center display-5 fw-bold mb-5">Frequently Asked Questions</h2>
+          <div class="accordion" id="faqAccordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne">
+                  What do I get with the Free Beta license?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  You get full, unlimited access to all features of the Content Drive add-on for the duration of the
+                  beta period. This includes the AI Strategy Refiner, the Idea Lab, and the Brief Generator. In
+                  exchange, we just ask for your honest feedback to help us improve the product.
+                </div>
+              </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo">
+                  What happens after the beta period ends?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  After the beta, we will introduce paid plans. As a thank you for being an early adopter, all our beta
+                  testers will receive an exclusive, significant lifetime discount on all future plans. You are not
+                  obligated to purchase, but you will have the opportunity to continue using Content Drive at the best
+                  price we will ever offer.
+                </div>
+              </div>
+            </div>
+            <!-- FAQ 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree">
+                  Do I need my own Gemini (or other AI) API key?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  No! The beauty of Content Drive is its simplicity. The AI is fully integrated. You do not need to get
+                  your own API key or have a separate AI subscription. Just install the add-on, enter your Beta license
+                  key, and it works.
+                </div>
+              </div>
+            </div>
+            <!-- FAQ 4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour">
+                  Is this just another AI writer?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Not at all. While Content Drive uses AI, it is not a writing tool. It is a **strategic workflow
+                  tool**. It's designed to manage the process that happens *before* you write: refining your strategy,
+                  brainstorming and prioritizing ideas, and creating detailed briefs. It solves the operational chaos,
+                  so your writers can focus on what they do best.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END BLOCK 5 -->
 
-  <!-- Add the FAQ section -->
-  <section id="faq-section">
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-      <ul class="faq-list">
-        <li>
-          <div class="question">
-            <span class="toggle-icon">+</span> How long does it take to receive the premium license key after purchase?
-            <!-- Q1 -->
-          </div>
-          <div class="answer">
-            <b>Answer:</b> You will receive your license key immediately after completing your purchase. Our system is
-            seamlessly integrated with the PayPal payment platform, ensuring a smooth delivery process. The license key
-            will be sent to the email address linked to your PayPal account. If you haven't received the key within 3
-            minutes, please contact us with your PayPal payment ID, and we will assist you promptly. You can reach our
-            customer service team via email at hi@timkhachhang.net.
-
-          </div>
-
-        </li>
-        <li>
-          <div class="question">
-            <span class="toggle-icon">+</span> Can I request a refund if I'm not satisfied with the product?
-            <!-- Q2 -->
-          </div>
-          <div class="answer">
-            <b>Answer:</b> We do not have a refund program in place.
-            </p> We actually offer a free license key option that allows you to explore and evaluate the product without
-            any time restrictions. Following the guide inside add-ons to get the free license key with limited features.
-            This gives you the opportunity to thoroughly test the software and ensure it aligns with your requirements
-            and
-            expectations. We encourage you to take advantage of this free trial period to make an informed decision
-            about
-            your purchase.
-
-            </p>Please note that once a paid license is purchased, it is non-refundable.
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <span class="toggle-icon">+</span> Is the product compatible with both Windows and Mac?
-            <!-- Q3 -->
-          </div>
-          <div class="answer">
-            <b>Answer:</b> Yes, the product works on both Windows and Mac.
-
-            It is cloud-based, so you can access it from any device. You can use the license key on multiple devices by
-            logging in with your email address associated with your license key.
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <span class="toggle-icon">+</span> Is the payment secure?
-            <!-- Q4 -->
-          </div>
-          <div class="answer">
-            <b>Answer:</b> Yes, the payment is secure as we use PayPal, a globally recognized and trusted payment
-            platform.
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <span class="toggle-icon">+</span> Do I need to make a monthly payment after purchase?
-            <!-- Q5 -->
-          </div>
-          <div class="answer">
-            <b>Answer:</b> No, you do not need to make any monthly payments after the initial purchase. When you buy our
-            product, you are purchasing a lifetime access license, which means there are no additional monthly fees.
-
-            </p> Furthermore, as we release new features and updates for the product, such as a mobile version,
-            integration with Google Forms, and digital sign integration, you will be able to access and benefit from
-            these
-            enhancements without any additional costs. We strive to provide ongoing value and improvements to our
-            customers, ensuring that you have access to the latest features and updates as they become available.
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <span class="toggle-icon">+</span> I have a pre-sale question. How to send it?
-            <!-- Q6 -->
-          </div>
-          <div class="answer">
-            <b>Answer:</b> To send a pre-sale question, simply email your inquiry to hi@timkhachhang.net. Our team
-            strives
-            to provide prompt assistance and typically responds within less than 30 minutes during regular business
-            days.
-            If you send a question over the weekend, the response time may be slightly longer.
-
-            </p> Additionally, we offer a valuable policy to ensure customer satisfaction. After making a purchase, if
-            you
-            require assistance with the initial setup, you can book a complimentary 30-minute online meeting.
-            </p> This dedicated support is designed to address any concerns and guarantee a positive experience with
-            your
-            purchase. We value our customers' satisfaction and are committed to providing the necessary support
-            throughout
-            your journey with our product.
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <span class="toggle-icon">+</span> I need help with initial set up after I make a payment. How I can get
-            help?
-            <!-- Q7 -->
-          </div>
-          <div class="answer">
-            <b>Answer:</b> After making a payment, you will receive an email containing instructions on how to request
-            help with the initial setup. In that email, you can find the information on how to make a help request. As
-            part of our current policy, every buyer is entitled to a complimentary 30-minute online support session.
-
-            </p>This dedicated support is designed to assist you with any questions or concerns you may have during the
-            initial setup process. We value your satisfaction and are committed to providing the necessary assistance to
-            ensure a smooth experience with our product.
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <span class="toggle-icon">+</span> What if I need to add more customize features?
-            <!-- Q8 -->
-          </div>
-          <div class="answer">
-            <b>Answer:</b> If you need to add more customized features, simply email us at hi@timkhachhang.net and
-            request
-            a booking for an online meeting.
-
-            We are happy to discuss your specific requirements and provide a quote for the desired customization. Our
-            team
-            offers customization services at a competitive rate to cater to your individual needs.
-
-            </p>Our team has a lot of experience in Appsheet app development, Google Cloud, automation workflows, and
-            system integration.
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <span class="toggle-icon">+</span> What if I buy a personal license but I use it for team?
-            <!-- Q9 -->
-          </div>
-          <div class="answer">
-            <b>Answer:</b> If you purchase a personal license but use it for a team, please note that this violates our
-            terms and is considered illegal. Engaging in such activity can result in the blocking of your purchased
-            license.
-
-            </p>To maintain transparency and fairness, we will send a warning notification before taking any action to
-            block the license. Our fraud detection system helps us identify instances of misuse or violation of
-            licensing
-            terms.
-
-            We strongly advise buyers to keep their license confidential and secure in a safe place. By adhering to the
-            terms and using the license appropriately, you can ensure a positive and lawful usage experience.
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <span class="toggle-icon">+</span> What does the term "user" refer to in the quote?
-            <!-- Q10-->
-          </div>
-          <div class="answer">
-            <b>Answer:</b> In our quote, the term "user" refers to an email account. The meaning of "user" varies based
-            on
-            the type of package purchased. Here are some examples for reference:
-
-            </p>For the <b>PERSONAL</b> package, if you purchase a license key for a user, it means that the license key
-            is meant to be used with a single email account. Sharing the license key with other users is considered a
-            violation of our terms. Our fraud system will automatically detect any unauthorized usage and issue a
-            warning.
-            Failure to rectify the situation may result in the license key being blocked.
-
-            </p>In the <b>TEAM</b>package, if you purchase a license key for the team, you can share the license key
-            with
-            up to 5 email accounts. Exceeding this limit will trigger a warning from our fraud system, as it indicates a
-            potential violation. It is important to ensure that the number of accounts using the license key remains
-            within the specified limit to avoid any disruptions.
-
-            </p>In the <b>GROWTH</b> package, you can share the license key with up to 10 email accounts. Similar to the
-            TEAM package, surpassing this limit will trigger a warning from our fraud system. It is crucial to adhere to
-            the specified limit to maintain a valid and unblocked license key.
-
-            </p>Please note that the specific terms and limitations regarding user accounts may vary depending on the
-            package purchased.
-          </div>
-        </li>
-        <li>
-          <div class="question">
-            <span class="toggle-icon">+</span> Can I get the invoice for my purchase?
-            <!-- Q11 -->
-          </div>
-          <div class="answer">
-            <b>Answer:</b> Yes, you can request an invoice for your purchase. We are able to provide invoices upon
-            buyer's
-            request. To generate the invoice, please provide us with your tax ID. We will ensure that the invoice
-            includes
-            the necessary details for your records.
-
-            </p>
-            <p>Please note that the price of the product does not include any tax fees imposed by the local government.
-              These fees, if applicable, will be charged separately.</p>
-          </div>
-        </li>
-        <!-- Add more FAQ items as needed -->
+  <!-- START BLOCK 6: FOOTER -->
+  <footer class="footer py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <h5 class="text-white mb-3">Content Drive</h5>
+      <ul class="list-inline mb-3">
+        <li class="list-inline-item"><a href="#price" class="text-white-50">Get Beta Access</a></li>
+        <li class="list-inline-item">&middot;</li>
+        <li class="list-inline-item"><a href="mailto:hi@timkhachhang.net" class="text-white-50">Contact Support</a></li>
+        <li class="list-inline-item">&middot;</li>
+        <li class="list-inline-item"><a href="#" class="text-white-50">Privacy Policy</a></li>
       </ul>
+      <p class="mb-0">Copyright &copy; 2025 | A Product by Tìm Khách Hàng</p>
     </div>
-  </section> <!-- END faq section -->
+  </footer>
+  <!-- END BLOCK 6 -->
 
 
-  <script
-    src="https://www.paypal.com/sdk/js?client-id=AQ3YFZl1eyOGddPKU1BXv3Sf_6TajXjuS_xnfB3dOWl6g2WgiPTw67JHFAWNf2VBxSaCjxbVJ7DT5o6h&enable-funding=venmo&currency=USD"></script>
+  <!-- Your existing script tags for PayPal and other functionalities should go here -->
+  <!-- Make sure your Bootstrap 5 JS file is included for the accordion to work -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Your existing custom scripts -->
   <script>
-
-    // Function to validate discount code and calculate discount percentage on the server-side using Google Apps Script
-    function validateDiscountCode(code) {
-      return fetch('https://script.google.com/macros/s/AKfycbxtwVgR4XPpw5f4f5R34wjojeXqE3MZ7_WuwhidAG_k6wgP4Fn0CNGRlzS2Ocda84s/exec?discountCode=' + code)
-        .then(response => response.json())
-        .then(data => {
-          if (data && data.discountPercentage) {
-            return data.discountPercentage;
-          } else {
-            return 0;
-          }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          return 0;
-        });
-    }
-
-    // Apply discount code when the "Apply" button is clicked
-    document.getElementById("apply-discount").addEventListener("click", function () {
-      const discountCode = document.getElementById("discount-code").value;
-      const discountError = document.getElementById("discount-error");
-
-      validateDiscountCode(discountCode)
-        .then(function (discountPercentage) {
-          if (discountPercentage > 0) {
-            // discountError.textContent = "Discount code applied successfully.";
-            discountError.textContent = "Discount code applied successfully. Discount: " + discountPercentage + "%. Click the Paypal button to process your payment.";
-
-          } else {
-            discountError.textContent = "Invalid discount code.";
-          }
-          renderPayPalButtons();
-        })
-        .catch(function (error) {
-          console.error('Error:', error);
-          discountError.textContent = "Failed to apply discount.";
-          renderPayPalButtons();
-        });
+    // Example: A simplified script for PayPal, you'll need to adapt your existing one.
+    // This example just shows an alert, but you would trigger your PayPal flow.
+    document.querySelector("#paypal-button-1 a").addEventListener("click", function () {
+      // Here you would trigger your existing renderPayPalButtons() logic or signup flow
+      alert("Redirecting to Beta signup/payment page...");
+      // For example: window.location.href = "YOUR_SIGNUP_LINK";
     });
 
-    // Render the PayPal buttons
-    function renderPayPalButtons() {
-      document.querySelectorAll(".paypal-button").forEach(function (selector) {
-        selector.innerHTML = ""; // Clear the container before rendering
-
-
-        const productName = selector.dataset.productName; //add product name
-        const price = selector.dataset.price;
-        const discountCode = document.getElementById("discount-code").value;
-        validateDiscountCode(discountCode)
-          .then(function (discountPercentage) {
-            const discountedAmount = price - (price * discountPercentage) / 100;
-
-            paypal.Buttons({
-              createOrder: function (data, actions) {
-                return actions.order.create({
-                  purchase_units: [{
-                    description: "PACKAGE: " + productName + ". PRICE: " + price + ". DISCOUNT_CODE: " + discountCode + ". DISCOUNT_PERCENT: " + discountPercentage, // Add the product name to the order
-                    // description: [{
-                    //   "PACKAGE": productName,
-                    //   "PRICE ": price ,
-                    //    "DISCOUNT": discountCode }] ,
-                    //price: price, // Add the product price to the order - phục vụ cho mình thôi?
-                    //discountCode: discountCode, // Add the discountCode to the order - phục vụ cho mình thôi?
-
-                    // Items info -- Comback with this LATER
-                    // items:[
-                    //   {
-                    //     name: productName
-                    //   }
-                    // ],
-                    //amount <--> đối soát với Paypal.
-                    amount: {
-                      value: discountedAmount.toFixed(2), // Giá trị đơn hàng.
-                      // breakdown:{
-                      //   discount: {
-                      //     currency_code: "USD",
-                      //     value: "discountCode"
-                      //   }
-                      // }
-                    },
-                  }],
-                });
-              },
-              onApprove: function (data, actions) {
-                return actions.order.capture().then(function (details) {
-                  alert("Transaction completed. " + details.payer.name.given_name + "Thank you!");
-                });
-              },
-            }).render(selector);
-          })
-          .catch(function (error) {
-            console.error('Error:', error);
-            alert('Failed to apply discount.');
-          });
-      });
-    }
-
-    // Render PayPal buttons initially
-    renderPayPalButtons();
-
-
-
-    // Toggle answer visibility when a question is clicked
-    document.querySelectorAll(".question").forEach(function (question) {
-      question.addEventListener("click", function () {
-        question.classList.toggle("expanded");
-        const answer = question.nextElementSibling;
-        answer.classList.toggle("expanded");
-      });
-    });
-
-    // Script to handle Tabs in hightligt features
-    function openTab(event, tabName) {
-      // Hide all tab content
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("feature-highlight-content");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-
-      // Remove 'active' class from all tab links
-      tablinks = document.getElementsByClassName("feature-highlight-tab");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-      }
-
-      // Show the selected tab content
-      document.getElementById(tabName).style.display = "block";
-
-      // Add 'active' class to the clicked tab link
-      event.currentTarget.classList.add("active");
-    }
-
-    // Script to handle Scroll from Menu to the item 
+    // You can keep your existing scrollToSection function
     function scrollToSection(sectionId) {
-      const section = document.querySelector(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+  const section = document.querySelector(sectionId);
+  if (section) {
+    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+    const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
 
-    // START - Scrip to Handel Before - After section
-    
-    // END - Script Befor and After section
-
+    window.scrollTo({
+      top: sectionTop,
+      behavior: 'smooth'
+    });
+  }
+}
   </script>
 
-  <!--footer starts from here-->
-  <footer class="footer">
-    <div class="container bottom_border">
-      <div class="row">
-        <div class=" col-sm-4 col-md col-sm-4  col-12 col">
-          <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
-          <!--headin5_amrc-->
-          <p class="mb10">We are Google Cloud and Appsheet Partner. Contact us with info below:</p>
-          <p><i class="fa fa-location-arrow"></i> 475 Nguyen Van Linh Street, 7 District, HCMC, VN </p>
-          <p><i class="fa fa-phone"></i> +84-88.888.3458 </p>
-          <p><i class="fa fa fa-envelope"></i> hi@timkhachhang.net </p>
-
-
-        </div>
-
-
-        <div class=" col-sm-4 col-md  col-6 col">
-          <h5 class="headin5_amrc col_white_amrc pt2">Resource</h5>
-          <!--headin5_amrc-->
-          <ul class="footer_ul_amrc">
-            <li><a href="https://www.youtube.com/playlist?list=PLWaIL_RL14zvRJ_gpBCTiU7FazwgKAvQy">Video Tutorial</a>
-            </li>
-            <li><a
-                href="https://workspace.google.com/marketplace/app/auto_create_folder_and_files/430076014869">Download</a>
-            </li>
-            <li><a href="https://timkhachhang.net/blog/category/auto-create-folder-and-file/">User Guide</a></li>
-            <li><a href="https://timkhachhang.net/blog/category/auto-create-folder-and-file/">Join Community</a></li>
-            <li><a href="https://timkhachhang.net/blog/category/auto-create-folder-and-file/">Templates</a></li>
-            <li><a href="https://timkhachhang.net/blog/category/auto-create-folder-and-file/">Support</a></li>
-          </ul>
-          <!--footer_ul_amrc ends here-->
-        </div>
-
-
-        <div class=" col-sm-4 col-md  col-6 col">
-          <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
-          <!--headin5_amrc-->
-          <ul class="footer_ul_amrc">
-            <li><a href="https://timkhachhang.net/blog/social-sheet-privacy-policy/">Term and Condition</a></li>
-            <li><a href="https://timkhachhang.net/blog/social-sheet-privacy-policy/">Data Privacy</a></li>
-            <li><a href="https://timkhachhang.net">Product</a></li>
-            <li><a href="https://timkhachhang.net">Services</a></li>
-
-          </ul>
-          <!--footer_ul_amrc ends here-->
-        </div>
-
-
-        <div class=" col-sm-4 col-md  col-12 col">
-          <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
-          <!--headin5_amrc ends here-->
-
-          <ul class="footer_ul2_amrc">
-            <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
-              <p>Automated your workflow<a href="#">https://timkhachhang.net</a></p>
-            </li>
-            <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
-              <p>Google Drive Automation<a href="#">https://timkhachhang.net</a></p>
-            </li>
-            <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
-              <p>Auto replace text in new files<a href="#">https://timkhachhang.net</a></p>
-            </li>
-          </ul>
-          <!--footer_ul2_amrc ends here-->
-        </div>
-      </div>
-    </div>
-
-
-    <div class="container">
-      <ul class="foote_bottom_ul_amrc">
-        <li><a href="https://timkhachhang.net">Home</a></li>
-        <li><a href="https://timkhachhang.net">About</a></li>
-        <li><a href="https://timkhachhang.net/contact">Services</a></li>
-        <li><a href="#price">Pricing</a></li>
-        <li><a href="https://timkhachhang.net/blog">Blog</a></li>
-        <li><a href="https://timkhachhang.net/contact">Contact</a></li>
-      </ul>
-      <!--foote_bottom_ul_amrc ends here-->
-      <p class="text-center">Copyright @2017 | Designed With by <a href="http://timkhachhang.net">Tìm Khách Hàng</a></p>
-
-      <ul class="social_footer_ul">
-        <li><a href="https://facebook.com/votuduc"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="https://twitter.com/votuduc"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="http://linkedin.com/in/votuduc"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="https://www.youtube.com/playlist?list=PLWaIL_RL14zvRJ_gpBCTiU7FazwgKAvQy"><i
-              class="fab fa-instagram"></i></a></li>
-      </ul>
-      <!--social_footer_ul ends here-->
-    </div>
-
-  </footer>
-
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>
