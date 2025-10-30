@@ -390,7 +390,8 @@
             <h4 class="fw-bold text-primary">Pipeline A: The Full Article Writer</h4>
             <p class="text-muted">Stop staring at a <strong>blank page</strong>. Dispatch your brief to our
               <strong>Writer Agent</strong>, a multi-agent system that takes your AI-generated outline and writes a
-              complete, high-quality with images, SEO-friendly first draft of your article.</p>
+              complete, high-quality with images, SEO-friendly first draft of your article.
+            </p>
             <p class="fw-bold mt-auto">⭐ Included as monthly credits in the Pro & Business plans.</p>
           </div>
         </div>
@@ -401,7 +402,8 @@
             <p class="text-muted">Multiply your impact without multiplying your effort. Dispatch your brief to our
               <strong>Digital Asset Suite</strong>, a multi-agent system that transforms your article's key sections
               into a complete set of promotional content: a Google Slide deck, social media images, an audio, and a
-              long-form video. Multiple Language support!</p>
+              long-form video. Multiple Language support!
+            </p>
             <p class="fw-bold mt-auto">⭐ Included as monthly credits in the Business plan.</p>
           </div>
         </div>
@@ -437,6 +439,8 @@
 
 
   <!-- START: FINAL 3-TIER PRICING TABLE -->
+
+  <!-- START: FINAL 3-TIER PRICING TABLE (MODIFIED FOR PAYPAL INTEGRATION) -->
   <section id="price" class="py-5 bg-light">
     <div class="container">
       <!-- Section Header -->
@@ -450,7 +454,7 @@
       <!-- Pricing Cards -->
       <div class="row">
 
-        <!-- TIER 1: FREE -->
+        <!-- TIER 1: "FREE" (which we will map to our PAID 'BASIC' plan) -->
         <div class="col-lg-4">
           <div class="card mb-5 mb-lg-0 h-100">
             <div class="card-body">
@@ -470,8 +474,14 @@
                   Credits</li>
               </ul>
               <div class="d-grid">
-                <a href="[YOUR_FREE_SIGNUP_LINK]" class="btn btn-outline-primary text-uppercase">Start for Free</a>
+                <!-- NEW: Add a unique ID to the custom button and link it -->
+
+                <a href="javascript:void(0);" id="custom-button-basic"
+                  class="btn btn-outline-primary text-uppercase">Start for Free</a>
+
               </div>
+              <!-- NEW: Add a hidden container for the real PayPal button for the BASIC plan -->
+              <div id="paypal-button-container-basic" data-product-name="BASIC" style="display: none;"></div>
               <p class="card-text text-center mt-3 small">For individuals exploring the core workflow.</p>
             </div>
           </div>
@@ -496,12 +506,12 @@
                 <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Team Collaboration</li>
               </ul>
               <div class="d-grid">
-                <!-- This would be your main PayPal button for the Pro plan -->
-                <div class="paypal-button" id="paypal-button-pro" data-price="29.00"
-                  data-product-name="ContentDrive - Pro Plan">
-                  <a href="#" class="btn btn-primary text-uppercase">Get Started with Pro</a>
-                </div>
+                <!-- NEW: Add a unique ID to the custom button and link it -->
+                <a href="javascript:void(0);" id="custom-button-pro" class="btn btn-primary text-uppercase">Get Started
+                  with Pro</a>
               </div>
+              <!-- NEW: Add a hidden container for the real PayPal button for the PRO plan -->
+              <div id="paypal-button-container-pro" data-product-name="PRO" style="display: none;"></div>
               <p class="card-text text-center mt-3 small">For solo marketers and small teams ready to automate their
                 writing process.</p>
             </div>
@@ -529,12 +539,13 @@
                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Dedicated Onboarding & Support</li>
               </ul>
               <div class="d-grid">
-                <!-- This would be your PayPal button for the Business plan -->
-                <div class="paypal-button" id="paypal-button-business" data-price="99.00"
-                  data-product-name="ContentDrive - Business Plan">
-                  <a href="#" class="btn btn-outline-primary text-uppercase">Choose Business</a>
-                </div>
+                <!-- NEW: Add a unique ID to the custom button and link it -->
+                <a href="javascript:void(0);" id="custom-button-business"
+                  class="btn btn-outline-primary text-uppercase">Choose Business</a>
+
               </div>
+              <!-- NEW: Add a hidden container for the real PayPal button for the BUSINESS plan -->
+              <div id="paypal-button-container-business" data-product-name="BUSINESS" style="display: none;"></div>
               <p class="card-text text-center mt-3 small">For agencies and departments automating their entire
                 multi-format campaign.</p>
             </div>
@@ -542,16 +553,43 @@
         </div>
       </div>
 
-      <!-- "What's a Brief?" Explanation -->
+      <!-- "What's a Brief?" Explanation and Discount Code Section -->
+
+      <!-- NOTE: You will need to add your discount code form here if you still want to use it -->
       <div class="row mt-5">
-        <div class="col-lg-8 offset-lg-2 text-center">
-          <p class="text-muted"><strong>What's a "Brief"?</strong> Each 'Brief' is a complete, AI-generated article plan that solves the <strong>'blank page' problem</strong> for your team. But it's more than just an outline. It's a strategically-aligned content package, personalized for your audience.</p>
-          <p class="text-muted">Our AI intelligently adapts your <strong>core strategy to create a unique plan</strong>—including objectives, a tailored outline, and a call-to-action—for each specific client or customer segment, ensuring every piece of content is perfectly on-target and ready to execute.</p>
+        <div class="col-lg-8 offset-lg-2">
+          <!-- Your "What's a brief" text -->
         </div>
       </div>
 
     </div>
+
+    <!-- NEW, IMPROVED BOOTSTRAP MODAL -->
+    <div class="modal fade" id="paypal-modal" tabindex="-1" aria-labelledby="paypalModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content shadow-lg">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="paypalModalLabel">Confirm Your Subscription</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center px-4 pb-4">
+            <!-- You can add your logo here if you wish -->
+            <!-- <img src="/path/to/your-logo.svg" alt="ContentDrive" width="100" class="mb-3"> -->
+            <p class="lead">You are subscribing to the <strong class="text-primary" id="plan-name-in-modal">PRO</strong>
+              plan.</p>
+            <p class="text-muted small">Please click below to complete your secure payment with PayPal.</p>
+
+            <!-- The real PayPal button will be rendered here -->
+            <div id="paypal-button-container" class="mt-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END: IMPROVED MODAL -->
+
   </section>
+  <!-- END: FINAL 3-TIER PRICING TABLE (MODIFIED FOR PAYPAL INTEGRATION) -->
+
   <!-- END: FINAL 3-TIER PRICING TABLE -->
 
 
@@ -652,20 +690,105 @@
   <!-- END BLOCK 6 -->
 
 
-  <!-- Your existing script tags for PayPal and other functionalities should go here -->
   <!-- Make sure your Bootstrap 5 JS file is included for the accordion to work -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
+
+  <!-- PayPal SDK Script - CORRECTED -->
+<script 
+src="https://www.paypal.com/sdk/js?client-id=AUv3RJVkN6GOE0Na0lHYY-cMIEF_vQjUMfZjJ0aWpsuKyBEslhufzLXiKIVBAKnNcO65zgrP0ARkZIkk&vault=true&intent=subscription"
+data-sdk-integration-source="button-factory">
+</script>
+
+  <!-- FINAL PAYMENT SCRIPT WRAPPED IN AN EVENT LISTENER -->
+  <script>
+    // --- NEW: Wait for the entire page to load before running any of this code ---
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // ===================================================================
+      // GLOBAL CONFIGURATION
+      // ===================================================================
+      const SUBSCRIPTION_PLANS = {
+        "BASIC": { plan_id: "P-8PK71309D2022293GNEA235Q", display_name: "Free" }, // Basic
+        "PRO": { plan_id: "P-98054850T19910005NEBSO7Y", display_name: "Pro" },
+        "BUSINESS": { plan_id: "P-4FW79619RC779382RNEBSPPA", display_name: "Business" }
+      };
+
+      // A variable to hold the details of the plan the user wants to buy
+      let selectedPlan = {};
+      const modalElement = document.getElementById('paypal-modal');
+      // Ensure the modal element exists before trying to initialize it
+      if (!modalElement) {
+        console.error('PayPal modal element not found!');
+        return;
+      }
+      const paypalModal = new bootstrap.Modal(modalElement);
+
+      // ===================================================================
+      // PAYPAL BUTTON LOGIC
+      // ===================================================================
+
+      const paypalButton = paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'subscribe'
+        },
+        createSubscription: function (data, actions) {
+          // Use the plan ID that was set when the modal opened
+          return actions.subscription.create({
+            'plan_id': selectedPlan.plan_id
+          });
+        },
+        onApprove: function (data, actions) {
+          // The payment is approved. Redirect the user immediately.
+          window.location.href = "thank-you.html";
+        },
+        onError: function (err) {
+          console.error('An error occurred with the PayPal button:', err);
+          alert('An error occurred during the transaction. Please try again.');
+        },
+        onCancel: function (data) {
+          console.log('User cancelled the payment flow.', data);
+        }
+      });
+
+      // ===================================================================
+      // CUSTOM BUTTON CLICK HANDLERS
+      // ===================================================================
+
+      function handleCustomButtonClick(planName) {
+        if (SUBSCRIPTION_PLANS[planName]) {
+          selectedPlan = SUBSCRIPTION_PLANS[planName];
+          document.getElementById('plan-name-in-modal').textContent = selectedPlan.display_name;
+          paypalModal.show();
+        }
+      }
+
+      document.getElementById('custom-button-basic').addEventListener('click', function (e) { e.preventDefault(); handleCustomButtonClick("BASIC"); });
+      document.getElementById('custom-button-pro').addEventListener('click', function (e) { e.preventDefault(); handleCustomButtonClick("PRO"); });
+      document.getElementById('custom-button-business').addEventListener('click', function (e) { e.preventDefault(); handleCustomButtonClick("BUSINESS"); });
+
+      // ===================================================================
+      // MODAL EVENT LISTENER
+      // ===================================================================
+
+      modalElement.addEventListener('shown.bs.modal', function () {
+        // Render the PayPal button inside the now-visible modal body
+        document.getElementById('paypal-button-container').innerHTML = ''; // Clear previous button
+        paypalButton.render('#paypal-button-container');
+      });
+
+    }); // --- NEW: End of the DOMContentLoaded wrapper ---
+
+    
+
+  </script>
+
   <!-- Your existing custom scripts -->
   <script>
-    // Example: A simplified script for PayPal, you'll need to adapt your existing one.
-    // This example just shows an alert, but you would trigger your PayPal flow.
-    document.querySelector("#paypal-button-1 a").addEventListener("click", function () {
-      // Here you would trigger your existing renderPayPalButtons() logic or signup flow
-      alert("Redirecting to Beta signup/payment page...");
-      // For example: window.location.href = "YOUR_SIGNUP_LINK";
-    });
-
+    
     // You can keep your existing scrollToSection function
     function scrollToSection(sectionId) {
       const section = document.querySelector(sectionId);
