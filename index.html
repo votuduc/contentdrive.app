@@ -5,6 +5,18 @@
 <html lang="en">
 
 <head>
+
+  <!--Google Analytics-->
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ER35MV56D3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ER35MV56D3');
+</script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -299,7 +311,15 @@
             to a fully-briefed content campaign in minutes.</p>
 
           <!-- Primary Call-to-Action Button -->
-          <a href="[YOUR_PAYPAL_SIGNUP_LINK_HERE]" class="btn btn-primary btn-lg mb-5">Start for Free</a>
+          
+          <!--START - Enable below line of code if we want user click to DOWNLOAD ON GOOGLE WORKSPACE MARKETPLACE -->
+          <!--<a href="[link-to-google-workspace-add-on]" class="btn btn-primary btn-lg mb-5">Start for Free</a>-->
+          <!--END - Enable below line of code if we want user click to DOWNLOAD ON GOOGLE WORKSPACE MARKETPLACE -->
+          
+          <!--START - Enable below line of code if we want user click to make a payment to test the product -->
+          <a href="javascript:void(0);" id="hero-start-free-button" class="btn btn-primary btn-lg mb-5">Start for Free</a>
+          <!--END - Enable below line of code if we want user click to make a payment to test the product -->
+
         </div>
       </div>
       <div class="row justify-content-center">
@@ -769,6 +789,19 @@ data-sdk-integration-source="button-factory">
       document.getElementById('custom-button-basic').addEventListener('click', function (e) { e.preventDefault(); handleCustomButtonClick("BASIC"); });
       document.getElementById('custom-button-pro').addEventListener('click', function (e) { e.preventDefault(); handleCustomButtonClick("PRO"); });
       document.getElementById('custom-button-business').addEventListener('click', function (e) { e.preventDefault(); handleCustomButtonClick("BUSINESS"); });
+
+      // START - button tren homepage - Enbaled if we want to set the homepage button as payment the Trial
+      // Add a click listener for the other "Start for Free" button
+      // 
+      const heroButton = document.getElementById('hero-start-free-button');
+      if (heroButton) {
+        heroButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            // This button should trigger the BASIC plan flow
+            handleCustomButtonClick("BASIC");
+        });
+      }
+      // END - button tren homepage - Enbaled if we want to set the homepage button as payment the Trial
 
       // ===================================================================
       // MODAL EVENT LISTENER
