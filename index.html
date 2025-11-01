@@ -22,6 +22,30 @@
 
   <!-- NEW: Updated Title -->
   <title>ContentDrive: The AI Content Engine for Google Sheets</title>
+  <!-- =================================================================== -->
+<!-- START: OPEN GRAPH / SOCIAL MEDIA META TAGS -->
+<!-- =================================================================== -->
+
+<!-- Primary Meta Tags -->
+<meta name="description" content="ContentDrive is your AI-powered strategist, turning ideas into perfectly briefed content campaigns inside Google Sheets.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://contentdrive.app/">
+<meta property="og:title" content="ContentDrive: From Idea to Content Campaign in Minutes">
+<meta property="og:description" content="ContentDrive is your AI-powered strategist, turning ideas into perfectly briefed content campaigns inside Google Sheets.">
+<meta property="og:image" content="https://contentdrive.app/images/og-image.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://contentdrive.app/">
+<meta property="twitter:title" content="ContentDrive: From Idea to Content Campaign in Minutes">
+<meta property="twitter:description" content="ContentDrive is your AI-powered strategist, turning ideas into perfectly briefed content campaigns inside Google Sheets.">
+<meta property="twitter:image" content="https://contentdrive.app/images/og-image.png">
+
+<!-- =================================================================== -->
+<!-- END: OPEN GRAPH META TAGS -->
+<!-- =================================================================== -->
 
   <!-- NEW: Cleaned up Bootstrap 5 CSS (only one version is needed) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -33,7 +57,9 @@
 
 
   <!-- load Font Awesome icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!--FONT-->
   <link
@@ -157,9 +183,10 @@
     }
 
     /* --- In your <style> block, add this rule --- */
-.navbar .nav-link {
-  font-weight: 700; /* Using the numeric value for 'bold' */
-}
+    .navbar .nav-link {
+      font-weight: 700;
+      /* Using the numeric value for 'bold' */
+    }
 
     /* --- Hero Section --- */
     .hero {
@@ -232,7 +259,7 @@
       border-left: 4px solid var(--google-green);
     }
 
-    
+
 
 
     /* --- Pricing Section --- */
@@ -343,93 +370,94 @@
     }
 
     /* =================================================================== */
-/* NEW MULTI-COLUMN FOOTER STYLES
+    /* NEW MULTI-COLUMN FOOTER STYLES
 /* =================================================================== */
 
-.new-footer {
-  background-color: #202124; /* Google Dark Background */
-  color: #9aa0a6;           /* Google Dark Theme Secondary Text */
-  padding: 3rem 0 1.5rem 0;
-}
+    .new-footer {
+      background-color: #202124;
+      /* Google Dark Background */
+      color: #9aa0a6;
+      /* Google Dark Theme Secondary Text */
+      padding: 3rem 0 1.5rem 0;
+    }
 
-.new-footer h5 {
-  color: #fff;
-  font-family: 'Google Sans', sans-serif;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-}
+    .new-footer h5 {
+      color: #fff;
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
 
-.new-footer p {
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
+    .new-footer p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
 
-.new-footer p > i {
-  width: 20px; /* Aligns the icons and text neatly */
-  color: var(--google-blue);
-}
+    .new-footer p>i {
+      width: 20px;
+      /* Aligns the icons and text neatly */
+      color: var(--google-blue);
+    }
 
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-.footer-links li {
-  margin-bottom: 0.75rem;
-}
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
 
-.footer-links a {
-  color: #9aa0a6;
-  text-decoration: none;
-  transition: color 0.2s;
-}
+    .footer-links a {
+      color: #9aa0a6;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
 
-.footer-links a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
+    .footer-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
 
-.footer-bottom-border {
-  border-bottom: 1px solid #5f6368; /* A visible border on the dark background */
-  padding-bottom: 2rem;
-  margin-bottom: 1.5rem;
-}
+    .footer-bottom-border {
+      border-bottom: 1px solid #5f6368;
+      /* A visible border on the dark background */
+      padding-bottom: 2rem;
+      margin-bottom: 1.5rem;
+    }
 
-.copyright-text {
-  font-size: 0.85rem;
-  color: #9aa0a6;
-}
+    .copyright-text {
+      font-size: 0.85rem;
+      color: #9aa0a6;
+    }
 
-.copyright-text a {
-  color: #fff;
-  font-weight: 500;
-}
+    .copyright-text a {
+      color: #fff;
+      font-weight: 500;
+    }
 
-.social-icons {
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
+    .social-icons {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
 
-.social-icons a {
-  color: #9aa0a6;
-  font-size: 1.25rem;
-  transition: color 0.2s;
-}
+    .social-icons a {
+      color: #9aa0a6;
+      font-size: 1.25rem;
+      transition: color 0.2s;
+    }
 
-.social-icons a:hover {
-  color: var(--google-blue);
-}
-
-
-
+    .social-icons a:hover {
+      color: var(--google-blue);
+    }
   </style>
 
 </head>
@@ -437,39 +465,39 @@
 <body>
 
   <!-- START - UPDATED NAVIGATION BAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#"><strong>ContentDrive</strong></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item">
-          <a class="nav-link" href="#header-container">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#feature-highlight">How it Works</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#price">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#faq-section">FAQ</a>
-        </li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><strong>ContentDrive</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#header-container">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#feature-highlight">How it Works</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#price">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faq-section">FAQ</a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="https://blog.contentdrive.app">Blog</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://blog.contentdrive.app">Blog</a>
+          </li>
 
 
 
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-<!-- END - UPDATED NAVIGATION BAR -->
+  </nav>
+  <!-- END - UPDATED NAVIGATION BAR -->
 
 
   <!-- START - HERO SECTION (WITH FINAL TYPOGRAPHY HIERARCHY) -->
@@ -497,7 +525,7 @@
 
           <!-- Primary Call-to-Action Button -->
           <a href="https://www.youtube.com/a0UQJKXZHW4" class="btn btn-primary btn-lg mb-5">Start for Free</a>
-          
+
         </div>
       </div>
       <div class="row justify-content-center">
@@ -608,29 +636,30 @@
 
 
 
-<!-- START BLOCK 3: EMPATHY / "SOUND FAMILIAR?" -->
-<section id="empathy-section" class="py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2 text-center">
-        <h2 class="display-5 fw-bold">Sound Familiar?</h2>
-        <p class="lead text-muted mb-4">ContentDrive was <strong> for the overwhelmed marketer</strong> who's juggling too much.
-        </p>
-        <ul class="list-unstyled text-start">
-          <li class="mb-3 p-3 bg-white rounded shadow-sm">✔️ You're the entire marketing team, trying to manage a
-            hundred "great ideas" from across the company.</li>
-          <li class="mb-3 p-3 bg-white rounded shadow-sm">✔️ Your 'content calendar' is a chaotic spreadsheet that
-            feels more like a graveyard for good intentions.</li>
-          <li class="mb-3 p-3 bg-white rounded shadow-sm">✔️ You know you need a better system, but you don't have the
-            time to build one or the budget for an expensive platform.</li>
-          <li class="mb-3 p-3 bg-white rounded shadow-sm">✔️ You spend more time managing the process than you do
-            creating great content.</li>
-        </ul>
+  <!-- START BLOCK 3: EMPATHY / "SOUND FAMILIAR?" -->
+  <section id="empathy-section" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+          <h2 class="display-5 fw-bold">Sound Familiar?</h2>
+          <p class="lead text-muted mb-4">ContentDrive was <strong> for the overwhelmed marketer</strong> who's juggling
+            too much.
+          </p>
+          <ul class="list-unstyled text-start">
+            <li class="mb-3 p-3 bg-white rounded shadow-sm">✔️ You're the entire marketing team, trying to manage a
+              hundred "great ideas" from across the company.</li>
+            <li class="mb-3 p-3 bg-white rounded shadow-sm">✔️ Your 'content calendar' is a chaotic spreadsheet that
+              feels more like a graveyard for good intentions.</li>
+            <li class="mb-3 p-3 bg-white rounded shadow-sm">✔️ You know you need a better system, but you don't have the
+              time to build one or the budget for an expensive platform.</li>
+            <li class="mb-3 p-3 bg-white rounded shadow-sm">✔️ You spend more time managing the process than you do
+              creating great content.</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- END BLOCK 3 -->
+  </section>
+  <!-- END BLOCK 3 -->
 
 
   <!-- START: FINAL 3-TIER PRICING TABLE -->
@@ -1008,64 +1037,67 @@
   <!-- END BLOCK 5 -->
   <!-- START BLOCK 6: FOOTER -->
   <!-- START - NEW FOOTER -->
-<footer class="new-footer">
-  <div class="container">
-    <div class="row footer-bottom-border">
+  <footer class="new-footer">
+    <div class="container">
+      <div class="row footer-bottom-border">
 
-      <!-- Column 1: Find Us -->
-      <div class="col-lg-4 col-md-6 mb-4">
-        <h5>Find us</h5>
-        <p class="mb-3">ContentDrive is a product by Innoflow, a Google Cloud Partner.</p>
-        <p><i class="fa fa-location-arrow"></i> 2 floor, Saigon Paragon Blds, Tan Hung Award, HCMC, VN</p>
-        <p><i class="fa fa-phone"></i> +84-88.888.3458 (WhatsApp/Zalo/Viber)</p>
-        <p><i class="fa fa-envelope"></i> hi@timkhachhang.net</p>
+        <!-- Column 1: Find Us -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <h5>Find us</h5>
+          <p class="mb-3">ContentDrive is a product by Innoflow, a Google Cloud Partner.</p>
+          <p><i class="fa fa-location-arrow"></i> 2 floor, Saigon Paragon Blds, Tan Hung Award, HCMC, VN</p>
+          <p><i class="fa fa-phone"></i> +84-88.888.3458 (WhatsApp/Zalo/Viber)</p>
+          <p><i class="fa fa-envelope"></i> hi@timkhachhang.net</p>
+        </div>
+
+        <!-- Column 2: Resources -->
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5>Resources</h5>
+          <ul class="footer-links">
+            <li><a href="#">Video Tutorials</a></li>
+            <li><a href="#">Download</a></li>
+            <li><a href="#">User Guide</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Quick Links -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>Quick links</h5>
+          <ul class="footer-links">
+            <li><a href="#price">Pricing</a></li>
+            <li><a href="#faq-section">FAQ</a></li>
+            <li><a href="https://timkhachhang.net/blog/social-sheet-privacy-policy/">Terms & Conditions</a></li>
+            <li><a href="https://timkhachhang.net/blog/social-sheet-privacy-policy/">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: About -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>About ContentDrive</h5>
+          <p>We help overwhelmed marketers stop the content chaos and turn their strategy into high-quality,
+            fully-briefed content campaigns—all inside Google Sheets.</p>
+        </div>
+
       </div>
 
-      <!-- Column 2: Resources -->
-      <div class="col-lg-2 col-md-6 mb-4">
-        <h5>Resources</h5>
-        <ul class="footer-links">
-          <li><a href="#">Video Tutorials</a></li>
-          <li><a href="#">Download</a></li>
-          <li><a href="#">User Guide</a></li>
-          <li><a href="#">Support</a></li>
-        </ul>
+      <!-- Bottom Row: Copyright and Social Icons -->
+      <div class="row text-center">
+        <div class="col-12">
+          <p class="copyright-text mb-2">Copyright &copy; 2025 | A Product by <a href="http://timkhachhang.net"
+              target="_blank" rel="noopener">Innoflow</a>, founded by <a href="http://v.timkhachhang.net"
+              target="_blank" rel="noopener">Vo Tu Duc</a></p>
+          <ul class="social-icons">
+            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
       </div>
-
-      <!-- Column 3: Quick Links -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <h5>Quick links</h5>
-        <ul class="footer-links">
-          <li><a href="#price">Pricing</a></li>
-          <li><a href="#faq-section">FAQ</a></li>
-          <li><a href="https://timkhachhang.net/blog/social-sheet-privacy-policy/">Terms & Conditions</a></li>
-          <li><a href="https://timkhachhang.net/blog/social-sheet-privacy-policy/">Privacy Policy</a></li>
-        </ul>
-      </div>
-      
-      <!-- Column 4: About -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <h5>About ContentDrive</h5>
-        <p>We help overwhelmed marketers stop the content chaos and turn their strategy into high-quality, fully-briefed content campaigns—all inside Google Sheets.</p>
-      </div>
-
     </div>
-
-    <!-- Bottom Row: Copyright and Social Icons -->
-    <div class="row text-center">
-      <div class="col-12">
-        <p class="copyright-text mb-2">Copyright &copy; 2025 | A Product by <a href="http://timkhachhang.net" target="_blank" rel="noopener">Innoflow</a>, founded by <a href="http://v.timkhachhang.net" target="_blank" rel="noopener">Vo Tu Duc</a></p>
-        <ul class="social-icons">
-          <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
-          <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- END - NEW FOOTER -->
+  </footer>
+  <!-- END - NEW FOOTER -->
   <!-- END BLOCK 6 -->
 
 
