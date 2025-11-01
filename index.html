@@ -8,14 +8,14 @@
 
   <!--Google Analytics-->
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ER35MV56D3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ER35MV56D3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-ER35MV56D3');
-</script>
+    gtag('config', 'G-ER35MV56D3');
+  </script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,18 +30,25 @@
   <!-- NEW: Google Fonts - Roboto and Google Sans for that "Google" feel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- OLD FONT<link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"> -->
+
+  <!-- new FONT-->
   <link
-    href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@500;700;900&family=Roboto:wght@400;500;700&display=swap"
     rel="stylesheet">
+
 
   <!-- NEW: Custom CSS Style Block -->
   <style>
     /*
-       * =================================================================================
-       * CONTENT DRIVE - CUSTOM MVP STYLESHEET
-       * This CSS is designed to be clean, modern, and aligned with Google's Brand Identity.
-       * =================================================================================
-       */
+         * =================================================================================
+         * CONTENT DRIVE - CUSTOM MVP STYLESHEET
+         * This CSS is designed to be clean, modern, and aligned with Google's Brand Identity.
+         * =================================================================================
+         */
 
     :root {
       /* Google Brand Colors */
@@ -93,6 +100,53 @@
       font-size: 1.25rem;
     }
 
+    /* new css
+  /* --- NEW: Dual-Weight Hero Headline Styles --- */
+    .hero-headline {
+      /* Tighten Line Height & Responsive Scaling (Desktop) */
+      line-height: 1.2;
+      font-size: 4rem;
+      /* INCREASED: Larger size for more impact */
+    }
+
+    /* NEW: Style for the hero subtitle to make it support the headline */
+    .hero-subtitle {
+      font-size: 1.3rem;
+      /* INCREASED: Slightly larger than default .lead */
+      color: var(--text-secondary);
+      /* This is your existing #5f6368 gray, perfect for reduced contrast */
+      max-width: 750px;
+      /* Optional but recommended: keeps the line length readable */
+      margin-left: auto;
+      /* Centers the text block since it has a max-width */
+      margin-right: auto;
+    }
+
+    /* 1. Hierarchy by Weight */
+    .headline-light-text {
+      font-weight: 500;
+      /* The "connecting" words */
+    }
+
+    .headline-heavy-text {
+      font-weight: 900;
+      /* The "keyword" words */
+    }
+
+    /* 3. Responsive Scaling (Mobile) */
+    @media (max-width: 768px) {
+      .hero-headline {
+        font-size: 2.5rem;
+        /* A still-bold but more manageable size for mobile */
+        line-height: 1.25;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+        /* Adjust subtitle size for mobile */
+      }
+    }
+
     /* --- Navigation Bar --- */
     .navbar {
       border-bottom: 1px solid var(--border-color);
@@ -112,17 +166,36 @@
       border-color: var(--google-blue);
       padding: 0.75rem 2rem;
       font-size: 1.1rem;
+
     }
 
     .hero .btn-primary:hover {
-      background-color: #3367D6;
+      background-color: #4285F4;
       /* A slightly darker blue for hover */
-      border-color: #3367D6;
+      border-color: #4285F4;
     }
 
     .hero iframe {
       border-radius: 0.5rem;
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+    }
+
+    /* --- In your <style> block --- */
+
+    /* NEW: Custom style for the hero headline to create a balanced stack */
+    .hero-headline-stacked {
+      line-height: 1.25;
+      /* Pulls lines closer together (Default is ~1.4 or 1.5) */
+      font-size: 3.6rem;
+      /* Subtly smaller than the default 4rem for display-4 on large screens */
+    }
+
+    /* Make it responsive so it doesn't get too big on medium screens */
+    @media (max-width: 1200px) {
+      .hero-headline-stacked {
+        /* Use Bootstrap's responsive font size formula, but slightly smaller */
+        font-size: calc(1.5rem + 3.2vw);
+      }
     }
 
     /* --- Feature Highlight / How it Works Section --- */
@@ -299,46 +372,48 @@
   </nav>
 
 
+  <!-- START - HERO SECTION (WITH FINAL TYPOGRAPHY HIERARCHY) -->
+  <section id="header-container" class="py-5">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <!-- Widened slightly for the larger text -->
 
-  <!-- START - FINAL, DEFINITIVE HERO SECTION -->
-<!-- START - FINAL, DEFINITIVE HERO SECTION (REVISED) -->
-<section id="header-container" class="py-5">
-  <div class="container text-center">
-    <div class="row justify-content-center">
-      <div class="col-lg-9"> <!-- Note: I've slightly widened the column to col-lg-9 for better balance -->
+          <!-- Headline with Dual-Weight -->
+          <h1 class="fw-bold hero-headline">
+            <span class="headline-light-text">Go from </span><span class="headline-heavy-text"
+              style="color: #DB4437;">Strategy</span><span class="headline-light-text"> to an Entire</span>
+            <br>
+            <span class="headline-heavy-text" style="color: #4285F4;">Content Campaign</span><span
+              class="headline-light-text"> in </span><span class="headline-heavy-text">Minutes.</span>
+          </h1>
 
-        <!-- Text Content -->
-        <h1 class="display-4 fw-bold">
-          Go from <span style="color: #DB4437;">Strategy</span> to an Entire
-          <br> <!-- THIS IS THE KEY FIX -->
-          <span style="color: #4285F4;">Content Campaign</span> in Minutes.
-        </h1>
+          <!-- Subtitle: Now with the new hero-subtitle class -->
+          <p class="lead mb-4 hero-subtitle">
+            ContentDrive is your AI-powered strategist, turning your ideas into perfectly briefed content campaigns
+            inside Google Sheets.<strong> <span style="color: #0F9D58;">You</span></strong> provide the spark,
+            <strong><span style="color: #F4B400;">AI</span></strong> does the heavy lifting.
+          </p>
 
-        <p class="lead mb-4">
-          ContentDrive is your AI-powered strategist, turning your ideas into perfectly briefed content campaigns inside Google Sheets. <span style="color: #0F9D58;">You</span> provide the spark, <span style="color: #F4B400;">AI</span> does the heavy lifting.
-        </p>
-
-        <!-- Primary Call-to-Action Button -->
-        <a href="https://www.youtube.com/embed/UOMVRuD4jdQ" class="btn btn-primary btn-lg mb-5">Start for Free</a>
-
+          <!-- Primary Call-to-Action Button -->
+          <a href="https://www.youtube.com/embed/a0UQJKXZHW4" class="btn btn-primary btn-lg mb-5">Start for Free</a>
+          
+        </div>
       </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <!-- The Demo Video -->
-        <div class="ratio ratio-16x9">
-          <!-- IMPORTANT: Replace with your actual demo video URL -->
-          <iframe src="" title="ContentDrive - How it Works" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <!-- The Demo Video -->
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/UOMVRuD4jdQ" title="ContentDrive - How it Works" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- END - FINAL, DEFINITIVE HERO SECTION (REVISED) -->
-  <!-- END - FINAL, DEFINITIVE HERO SECTION -->
+  </section>
+  <!-- END - HERO SECTION (WITH FINAL TYPOGRAPHY HIERARCHY) -->
 
 
   <!-- START BLOCK 2: YOUR NEW WORKFLOW -->
@@ -613,207 +688,223 @@
 
 
 
-<!-- START BLOCK 5: NEW AND IMPROVED FAQ SECTION -->
-<section id="faq-section" class="py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <h2 class="text-center display-5 fw-bold mb-5">Frequently Asked Questions</h2>
-        <div class="accordion" id="faqAccordion">
+  <!-- START BLOCK 5: NEW AND IMPROVED FAQ SECTION -->
+  <section id="faq-section" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <h2 class="text-center display-5 fw-bold mb-5">Frequently Asked Questions</h2>
+          <div class="accordion" id="faqAccordion">
 
-          <!-- FAQ 1 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                What exactly is ContentDrive?
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                <strong>ContentDrive</strong> is a smart add-on for Google Sheets that transforms your familiar spreadsheet into a
-                powerful, <strong>AI-driven content orchestration engine.</strong> It’s designed to manage <strong>your entire content
-                  pre-production workflow</strong>, from refining a raw idea into a solid strategy to generating a detailed brief
-                ready for your writers.
+            <!-- FAQ 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  What exactly is ContentDrive?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <strong>ContentDrive</strong> is a smart add-on for Google Sheets that transforms your familiar
+                  spreadsheet into a
+                  powerful, <strong>AI-driven content orchestration engine.</strong> It’s designed to manage
+                  <strong>your entire content
+                    pre-production workflow</strong>, from refining a raw idea into a solid strategy to generating a
+                  detailed brief
+                  ready for your writers.
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- FAQ 2 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Is this just another AI writer like ChatGPT?
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Not at all. While we use powerful AI, ContentDrive is a <strong>strategic workflow tool</strong>, not
-                just a writer. Its primary purpose is to solve the operational chaos that happens <strong><em>before</em></strong> you
-                write. It provides a structured process for strategic planning, ideation, prioritization, and briefing,
-                ensuring every piece of content is purposeful and aligned with your goals.
+            <!-- FAQ 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Is this just another AI writer like ChatGPT?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Not at all. While we use powerful AI, ContentDrive is a <strong>strategic workflow tool</strong>, not
+                  just a writer. Its primary purpose is to solve the operational chaos that happens
+                  <strong><em>before</em></strong> you
+                  write. It provides a structured process for strategic planning, ideation, prioritization, and
+                  briefing,
+                  ensuring every piece of content is purposeful and aligned with your goals.
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- FAQ 3 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                What do I get with the Free plan?
-              </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                The Free plan gives you access to the complete core workflow of ContentDrive. You can use the AI
-                Strategy Refiner, brainstorm and prioritize ideas in the Idea Lab, and generate up to 5 complete,
-                detailed writer's briefs per month. It's the perfect way to experience the strategic power of the system
-                and end "content chaos" for good.
+            <!-- FAQ 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  What do I get with the Free plan?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  The Free plan gives you access to the complete core workflow of ContentDrive. You can use the AI
+                  Strategy Refiner, brainstorm and prioritize ideas in the Idea Lab, and generate up to 5 complete,
+                  detailed writer's briefs per month. It's the perfect way to experience the strategic power of the
+                  system
+                  and end "content chaos" for good.
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- FAQ 4 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingFour">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                What counts as one "brief" towards my monthly limit?
-              </button>
-            </h2>
-            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                One <strong>Brief</strong> is the final, complete output generated by the <strong>Briefer Agent</strong> for a single content idea.
-                This includes the detailed, multi-point outline, objectives, target persona, and call-to-action.
-                Generating strategies and brainstorming ideas in the earlier steps do not count towards this limit.
+            <!-- FAQ 4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  What counts as one "brief" towards my monthly limit?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  One <strong>Brief</strong> is the final, complete output generated by the <strong>Briefer
+                    Agent</strong> for a single content idea.
+                  This includes the detailed, multi-point outline, objectives, target persona, and call-to-action.
+                  Generating strategies and brainstorming ideas in the earlier steps do not count towards this limit.
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- FAQ 5 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingFive">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                What are "Article Writer" and "Digital Asset Suite" Credits?
-              </button>
-            </h2>
-            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                These are optional, premium features for users on our paid plans who want to accelerate production.
-                <ul>
-                  <li><strong>Article Writer Credit:</strong> Takes one of your approved briefs and uses a specialized
-                    AI agent to write a complete, SEO-friendly first draft of the article.</li>
-                  <li><strong>Digital Asset Suite Credit:</strong> Transforms one brief into a full set of promotional
-                    materials, including a Google Slides deck, social media images, and video/audio scripts.</li>
-                </ul>
+            <!-- FAQ 5 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  What are "Article Writer" and "Digital Asset Suite" Credits?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  These are optional, premium features for users on our paid plans who want to accelerate production.
+                  <ul>
+                    <li><strong>Article Writer Credit:</strong> Takes one of your approved briefs and uses a specialized
+                      AI agent to write a complete, SEO-friendly first draft of the article.</li>
+                    <li><strong>Digital Asset Suite Credit:</strong> Transforms one brief into a full set of promotional
+                      materials, including a Google Slides deck, social media images, and video/audio scripts.</li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- FAQ 6 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingSix">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                Do I need to get my own API key from Google (Gemini) or another AI provider?
-              </button>
-            </h2>
-            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                <strong>No.</strong> The AI is fully integrated into the ContentDrive add-on. <strong>You do not need</strong> to sign up for any other AI
-                services, manage API keys, or have a separate subscription. Just install the add-on, activate your plan,
-                and it works.
+            <!-- FAQ 6 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  Do I need to get my own API key from Google (Gemini) or another AI provider?
+                </button>
+              </h2>
+              <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <strong>No.</strong> The AI is fully integrated into the ContentDrive add-on. <strong>You do not
+                    need</strong> to sign up for any other AI
+                  services, manage API keys, or have a separate subscription. Just install the add-on, activate your
+                  plan,
+                  and it works.
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- FAQ 7 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingSeven">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                Who is ContentDrive designed for?
-              </button>
-            </h2>
-            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                ContentDrive was built for <strong>overwhelmed marketers</strong>. This includes solo content creators, small business
-                owners acting as their own marketing team, content managers at startups, and marketing agencies looking
-                <strong>to standardize their workflow and scale content production efficiently.</strong>
+            <!-- FAQ 7 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  Who is ContentDrive designed for?
+                </button>
+              </h2>
+              <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  ContentDrive was built for <strong>overwhelmed marketers</strong>. This includes solo content
+                  creators, small business
+                  owners acting as their own marketing team, content managers at startups, and marketing agencies
+                  looking
+                  <strong>to standardize their workflow and scale content production efficiently.</strong>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- FAQ 8 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingEight">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                Is my data secure?
-              </button>
-            </h2>
-            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                <strong>Yes.</strong> ContentDrive operates within your secure Google Sheets environment. Your strategic inputs are sent
-                to the Google Gemini API for processing to generate the results you request, but your data is not stored
-                by us. Everything lives and is managed within your own Google Sheet, which acts as your single source of
-                truth.
+            <!-- FAQ 8 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingEight">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                  Is my data secure?
+                </button>
+              </h2>
+              <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <strong>Yes.</strong> ContentDrive operates within your secure Google Sheets environment. Your
+                  strategic inputs are sent
+                  to the Google Gemini API for processing to generate the results you request, but your data is not
+                  stored
+                  by us. Everything lives and is managed within your own Google Sheet, which acts as your single source
+                  of
+                  truth.
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- FAQ 9 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingNine">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-                Can I upgrade, downgrade, or cancel my plan at any time?
-              </button>
-            </h2>
-            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                <strong>Absolutely.</strong> You have full control over your subscription. You can upgrade to a higher tier for more
-                features, downgrade if your needs change, or cancel your plan at any time, no questions asked.
+            <!-- FAQ 9 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingNine">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                  Can I upgrade, downgrade, or cancel my plan at any time?
+                </button>
+              </h2>
+              <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <strong>Absolutely.</strong> You have full control over your subscription. You can upgrade to a higher
+                  tier for more
+                  features, downgrade if your needs change, or cancel your plan at any time, no questions asked.
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- FAQ 10 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTen">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                How do I get started?
-              </button>
-            </h2>
-            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
-              data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Simply click <strong>Start for Free</strong> and follow the instructions to get the Google Sheets template with the
-                ContentDrive add-on. The free plan is activated instantly, and you can begin turning your ideas into
-                structured content plans in minutes.
+            <!-- FAQ 10 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTen">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                  How do I get started?
+                </button>
+              </h2>
+              <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Simply click <strong>Start for Free</strong> and follow the instructions to get the Google Sheets
+                  template with the
+                  ContentDrive add-on. The free plan is activated instantly, and you can begin turning your ideas into
+                  structured content plans in minutes.
+                </div>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- END BLOCK 5 -->
+  </section>
+  <!-- END BLOCK 5 -->
   <!-- START BLOCK 6: FOOTER -->
   <footer class="footer py-4 bg-dark text-white-50">
     <div class="container text-center">
@@ -836,10 +927,10 @@
 
 
   <!-- PayPal SDK Script - CORRECTED -->
-<script 
-src="https://www.paypal.com/sdk/js?client-id=AUv3RJVkN6GOE0Na0lHYY-cMIEF_vQjUMfZjJ0aWpsuKyBEslhufzLXiKIVBAKnNcO65zgrP0ARkZIkk&vault=true&intent=subscription"
-data-sdk-integration-source="button-factory">
-</script>
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=AUv3RJVkN6GOE0Na0lHYY-cMIEF_vQjUMfZjJ0aWpsuKyBEslhufzLXiKIVBAKnNcO65zgrP0ARkZIkk&vault=true&intent=subscription"
+    data-sdk-integration-source="button-factory">
+    </script>
 
   <!-- FINAL PAYMENT SCRIPT WRAPPED IN AN EVENT LISTENER -->
   <script>
@@ -916,10 +1007,10 @@ data-sdk-integration-source="button-factory">
       // 
       const heroButton = document.getElementById('hero-start-free-button');
       if (heroButton) {
-        heroButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            // This button should trigger the BASIC plan flow
-            handleCustomButtonClick("BASIC");
+        heroButton.addEventListener('click', function (e) {
+          e.preventDefault();
+          // This button should trigger the BASIC plan flow
+          handleCustomButtonClick("BASIC");
         });
       }
       // END - button tren homepage - Enbaled if we want to set the homepage button as payment the Trial
@@ -936,13 +1027,13 @@ data-sdk-integration-source="button-factory">
 
     }); // --- NEW: End of the DOMContentLoaded wrapper ---
 
-    
+
 
   </script>
 
   <!-- Your existing custom scripts -->
   <script>
-    
+
     // You can keep your existing scrollToSection function
     function scrollToSection(sectionId) {
       const section = document.querySelector(sectionId);
