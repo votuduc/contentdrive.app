@@ -205,6 +205,20 @@
       /* Using the numeric value for 'bold' */
     }
 
+    /* --- In your <style> block, add this new rule --- */
+    /* This adjusts the padding on the link containing the logo for better alignment */
+.navbar-brand {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+/* This increases the logo size slightly for better presence */
+.navbar-logo-img {
+  height: 40px; /* Increased from 35px */
+  width: auto;
+}
+
+
     /* --- Hero Section --- */
     .hero {
       padding: 6rem 0;
@@ -276,7 +290,45 @@
       border-left: 4px solid var(--google-green);
     }
 
+    /* --- In your <style> block, add this new CSS --- */
 
+/* =================================================================== */
+/* NEW "AI AGENTS" SECTION
+/* =================================================================== */
+#ai-agents-section {
+  background-color: #fff; /* A clean white background */
+}
+
+.agent-card {
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.agent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .08);
+}
+
+.agent-icon {
+  font-size: 2.5rem;
+  color: var(--google-blue);
+  margin-bottom: 1rem;
+}
+
+.agent-card h4 {
+  font-family: 'Google Sans', sans-serif;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.agent-card p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
 
 
     /* --- Pricing Section --- */
@@ -484,7 +536,11 @@
   <!-- START - UPDATED NAVIGATION BAR -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#"><strong>ContentDrive</strong></a>
+      <!--<a class="navbar-brand" href="#"><strong>ContentDrive</strong></a>-->
+      <a class="navbar-brand" href="#">
+        <img src="images/logo/logo_contentdrive_400x133.png" alt="ContentDrive Logo" class="navbar-logo-img">
+      </a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -611,6 +667,59 @@
     </div>
   </section>
   <!-- END BLOCK 2 -->
+
+  <!-- START: NEW "AI AGENTS" SECTION -->
+<section id="ai-agents-section" class="py-5">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h2 class="display-5 fw-bold">Meet Your AI Content Team</h2>
+        <p class="lead text-muted">ContentDrive isn't a single AI. It's a system of specialized agents, each an expert at its specific task in the content workflow.</p>
+      </div>
+    </div>
+
+    <!-- Agent Cards -->
+    <div class="row g-4">
+
+      <!-- Agent 1: The Strategist (Refiner) -->
+      <div class="col-lg-4">
+        <div class="agent-card text-center">
+          <div class="agent-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h4>The Strategist</h4>
+          <p>Transforms your raw, unstructured notes into a professional, six-part Core Strategy that guides the entire campaign.</p>
+        </div>
+      </div>
+
+      <!-- Agent 2: The Brainstormer -->
+      <div class="col-lg-4">
+        <div class="agent-card text-center">
+          <div class="agent-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h4>The Brainstormer</h4>
+          <p>Reads your approved strategy and generates dozens of high-impact, relevant content ideas for you to review and prioritize.</p>
+        </div>
+      </div>
+
+      <!-- Agent 3: The Planner -->
+      <div class="col-lg-4">
+        <div class="agent-card text-center">
+          <div class="agent-icon">
+            <i class="fas fa-map-signs"></i>
+          </div>
+          <h4>The Planner</h4>
+          <p>Takes a single approved idea and suggests the optimal format, a unique angle, a compelling title, and a primary SEO keyword.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- END: NEW "AI AGENTS" SECTION -->
 
   <!-- START: NEW "BEYOND THE BRIEF" SECTION -->
   <section id="beyond-the-brief" class="py-5">
