@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Documentation - ContentDrive</title>
+    <meta name="description"
+        content="Official documentation and user guide for ContentDrive. Learn how to install, set up, and use the AI-powered content orchestration engine.">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicons (using placeholders) -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <!-- =================================================================== -->
+    <!-- START: FINAL, CORRECTED CSS -->
+    <!-- =================================================================== -->
+
+    <style>
+        :root {
+            --google-blue: #4285F4;
+            --google-red: #DB4437;
+            --google-yellow: #F4B400;
+            --google-green: #0F9D58;
+            --text-primary: #202124;
+            --text-secondary: #5f6368;
+            --background-light: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        /* --- GLOBAL & BRAND STYLES --- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-primary);
+            background-color: #fff;
+            padding-top: 70px;
+            /* THIS IS THE FIX: The overflow-x property has been REMOVED from the body
+           to allow Bootstrap's ScrollSpy to function correctly. Our robust grid
+           layout handles the overflow prevention now. */
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .navbar-brand {
+            font-family: 'Google Sans', sans-serif;
+            font-weight: 700;
+        }
+
+        /* --- NAVBAR & FOOTER STYLES --- */
+        .navbar {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar-brand {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+
+        .navbar-logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .navbar .nav-link {
+            font-weight: 700;
+        }
+
+        .new-footer {
+            background-color: #202124;
+            color: #9aa0a6;
+            padding: 3rem 0 1.5rem 0;
+        }
+
+        /* --- CORE DOCUMENTATION LAYOUT STYLES --- */
+        .doc-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2.5rem;
+        }
+
+        .doc-sidebar {
+            position: sticky;
+            top: 85px;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+        }
+
+        .doc-content {
+            min-width: 0;
+            /* This remains the most important rule for preventing layout breaks */
+        }
+
+        /* --- SIDEBAR NAVIGATION --- */
+        .doc-nav-list {
+            list-style: none;
+            padding-left: 0;
+            border-right: 1px solid var(--border-color);
+            padding-right: 1.5rem;
+        }
+
+        .doc-nav-list .doc-nav-section {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            padding: 1.5rem 0 0.5rem 0.75rem;
+        }
+
+        .doc-nav-list .doc-nav-link {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            text-decoration: none;
+            color: var(--text-secondary);
+            border-radius: 0 0.25rem 0.25rem 0;
+            font-size: 0.9rem;
+            border-left: 3px solid transparent;
+        }
+
+        .doc-nav-list .doc-nav-link:hover {
+            background-color: var(--background-light);
+            color: var(--text-primary);
+        }
+
+        .doc-nav-list .doc-nav-link.active {
+            color: var(--google-blue);
+            background-color: #e8f0fe;
+            border-left-color: var(--google-blue);
+            font-weight: 700;
+        }
+
+        /* --- CONTENT TYPOGRAPHY --- */
+        .doc-content h2 {
+            color: var(--google-red);
+            font-size: 2rem;
+            margin-top: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .doc-content h3 {
+            color: var(--google-blue);
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .doc-content p,
+        .doc-content li {
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .doc-content img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .doc-content code {
+            word-wrap: break-word;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: #202124;
+            /* Dark grey, consistent with Google products */
+        }
+
+        .footer .text-white-50 {
+            color: #9aa0a6 !important;
+            /* Google's secondary dark-theme text color */
+        }
+
+        .footer a.text-white-50:hover {
+            color: #fff !important;
+        }
+
+        /* =================================================================== */
+        /* NEW MULTI-COLUMN FOOTER STYLES
+/* =================================================================== */
+
+        .new-footer {
+            background-color: #202124;
+            /* Google Dark Background */
+            color: #9aa0a6;
+            /* Google Dark Theme Secondary Text */
+            padding: 3rem 0 1.5rem 0;
+        }
+
+        .new-footer h5 {
+            color: #fff;
+            font-family: 'Google Sans', sans-serif;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .new-footer p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .new-footer p>i {
+            width: 20px;
+            /* Aligns the icons and text neatly */
+            color: var(--google-blue);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #9aa0a6;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .footer-bottom-border {
+            border-bottom: 1px solid #5f6368;
+            /* A visible border on the dark background */
+            padding-bottom: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .copyright-text {
+            font-size: 0.85rem;
+            color: #9aa0a6;
+        }
+
+        .copyright-text a {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .social-icons {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: #9aa0a6;
+            font-size: 1.25rem;
+            transition: color 0.2s;
+        }
+
+        .social-icons a:hover {
+            color: var(--google-blue);
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#doc-nav" data-bs-offset="120" tabindex="0">
+
+    <!-- START - Your Existing Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo/logo_contentdrive_400x133.png" alt="ContentDrive Logo" class="navbar-logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#feature-highlight">How it Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#price">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#faq-section">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="doc.html#">Docs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://blog.contentdrive.app">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END - Navbar -->
+
+    <!-- START - Main Documentation Layout -->
+    <div class="container-fluid p-4 p-md-5">
+        <div class="doc-layout">
+
+            <!-- Left Sidebar Navigation -->
+            <nav class="doc-sidebar d-none d-lg-block">
+                <ul id="doc-nav" class="nav doc-nav-list flex-column">
+
+                    <!-- Part 1 Links -->
+                    <li>
+                        <div class="doc-nav-section">Installation</div>
+                    </li>
+                    <li><a class="nav-link doc-nav-link" href="#install-step-1">1. Install from Marketplace</a></li>
+                    <li><a class="nav-link doc-nav-link" href="#install-step-2">2. Initial Setup & Licensing</a></li>
+
+                    <!-- Part 2 Links -->
+                    <li>
+                        <div class="doc-nav-section">Content Workflow</div>
+                    </li>
+                    <li><a class="nav-link doc-nav-link" href="#usage-step-1">Step 1: Define Strategy</a></li>
+                    <li><a class="nav-link doc-nav-link" href="#usage-step-2">Step 2: Ideation</a></li>
+                    <li><a class="nav-link doc-nav-link" href="#usage-step-3">Step 3: Build Roadmap</a></li>
+                    <li><a class="nav-link doc-nav-link" href="#usage-step-4">Step 4: Strategic Planning</a></li>
+                    <li><a class="nav-link doc-nav-link" href="#usage-step-5">Step 5: Create Briefs</a></li>
+
+                    <!-- Part 3 Link -->
+                    <li>
+                        <div class="doc-nav-section">Advanced Features</div>
+                    </li>
+                    <li><a class="nav-link doc-nav-link" href="#advanced-automation">Advanced Automation</a></li>
+
+                    <!-- Part 4 Link -->
+                    <li>
+                        <div class="doc-nav-section">Troubleshooting</div>
+                    </li>
+                    <li><a class="nav-link doc-nav-link" href="#troubleshooting">Troubleshooting</a></li>
+
+                </ul>
+            </nav>
+
+
+            <!-- Right Main Content -->
+            <!-- Right Main Content -->
+            <main class="doc-content">
+
+                <h1 class="display-5">📚 ContentDrive: The Official User Guide</h1>
+                <p class="lead text-secondary">Turn Google Sheets into an AI-Powered Content Operation System.</p>
+
+                <!-- =================================================================== -->
+                <!-- PART 1: INSTALLATION & ONBOARDING -->
+                <!-- =================================================================== -->
+                <section id="installation">
+                    <h2>Part 1: Installation & Onboarding</h2>
+                    <p>Follow these one-time steps to activate ContentDrive in your workspace.</p>
+
+                    <h3 id="install-step-1">1. Install from Marketplace</h3>
+                    <p>Open a new or existing Google Sheet. In the top menu, go to
+                        <code>Extensions > Add-ons > Get add-ons</code>.
+                    </p>
+                    <img src="images/docs/doc_image_1.png"
+                        alt="Screenshot showing the Extensions menu in Google Sheets, with 'Get add-ons' highlighted.">
+
+                    <p>Search for "ContentDrive", click the result, and then click <strong>Install</strong>. You will
+                        need to grant the necessary Google permissions to continue.</p>
+                    <img src="images/docs/doc_image_2.png"
+                        alt="Screenshot of the Google Workspace Marketplace showing the ContentDrive app listing.">
+
+                    <h3 id="install-step-2">2. Initial Setup & Licensing</h3>
+                    <p>Once installed, refresh your browser tab (Press F5 or Cmd+R). <strong>Note: This is critical for
+                            the menu to appear.</strong></p>
+                    <p>Go to <code>Extensions > ContentDrive > Initial Setup</code>.</p>
+                    <img src="images/docs/doc_image_3.png"
+                        alt="Screenshot of the Extensions menu highlighting the 'Initial SetUp' option under ContentDrive.">
+
+                    <p>The add-on will automatically generate the required tabs/sheets for you. A sidebar will appear on
+                        the right. Fill in your Name and Email to register.</p>
+                    <img src="images/docs/doc_image_4.png"
+                        alt="Screenshot of the onboarding form in the Google Sheets sidebar, asking for name, email, and primary use.">
+
+                    <p>Check your Email: You will receive a License Key. Copy the key and paste it into Cell
+                        <strong>B2</strong> of the <strong>"Settings ⚙️"</strong> tab.
+                    </p>
+
+                    <div id="install-step-3" class="alert alert-warning mt-4" role="alert">
+                        <h4 class="alert-heading">⚠️ QA Alert</h4>
+                        <p>If the "ContentDrive" menu does not appear after installation, refresh the page (F5). If it
+                            still does not appear, go to <code>Help > Check Onboarding Status</code> or
+                            <code>Reset Onboarding</code>.
+                        </p>
+                        <img src="images/docs/doc_image_5.png"
+                            alt="Screenshot of the Help menu showing the 'Check Onboarding Status' and 'Reset Onboarding' options.">
+                    </div>
+                </section>
+
+                <!-- =================================================================== -->
+                <!-- PART 2: THE 5-STEP CONTENT WORKFLOW -->
+                <!-- =================================================================== -->
+                <section id="usages" class="mt-5">
+                    <h2>Part 2: The 5-Step Content Workflow</h2>
+                    <p>ContentDrive operates on a "Waterfall" logic. You must complete one step to unlock the next.</p>
+
+                    <h3 id="usage-step-1">Step 1: Define Your Strategy</h3>
+                    <p><strong>Goal:</strong> Teach the AI your brand voice, audience, and core value proposition.</p>
+                    <ol>
+                        <li><strong>Human Action:</strong> Navigate to the <code>1. Strategy Draft</code> tab and fill
+                            in the 6 columns (Primary Audience, Core Problem, USP, etc.). Do not leave these blank; the
+                            AI needs this context.</li>
+                        <img src="images/docs/doc_image_6.png"
+                            alt="Screenshot of the '1. Strategy Draft' tab with example content filled in.">
+                        <li><strong>AI Action:</strong> Go to
+                            <code>Extensions > ContentDrive > Content AI Workflow > Step 1: AI Refine Strategy</code>.
+                        </li>
+                        <li><strong>Review:</strong> Go to the <code>2. Strategy Hub</code> tab. The AI has refined your
+                            raw notes into a professional strategy. The status will show "AI processing...".</li>
+                        <img src="images/docs/doc_image_7.png"
+                            alt="Screenshot of the '2. Strategy Hub' tab showing the 'AI Processing...' status and the success pop-up.">
+                        <li><strong>Approve:</strong> If you are happy with the strategy, change the status in Column G
+                            from "AI Complete" to "Approved".</li>
+                        <img src="images/docs/doc_image_8.png"
+                            alt="Screenshot of the '2. Strategy Hub' tab with the status changed to 'Approved'.">
+                    </ol>
+
+                    <h3 id="usage-step-2">Step 2: Ideation & Prioritization</h3>
+                    <p><strong>Goal:</strong> Generate topic ideas aligned with the strategy from Step 1.</p>
+                    <ul>
+                        <li><strong>AI Action:</strong> Go to
+                            <code>Extensions > ContentDrive > Content AI Workflow > Step 2: AI Generate & Prioritize</code>.
+                        </li>
+                        <img src="images/docs/doc_image_9.png"
+                            alt="Screenshot of the success pop-up after generating ideas.">
+                        <li>The AI will read your "Approved" strategy and generate a list of content ideas in the
+                            <code>2. Strategy Hub</code> tab (starting below the strategy rows).
+                        </li>
+                        <li><strong>Scoring:</strong> The AI automatically assigns a "Priority Tier" to each idea:
+                            🟢 DO NOW
+                            🟡 Do Later or
+                            🟣 Backlog.</li>
+                        <img src="images/docs/doc_image_10.png"
+                            alt="Screenshot of the '3. Idea Lab' tab filled with prioritized content ideas.">
+                    </ul>
+
+                    <h3 id="usage-step-3">Step 3: Build the Roadmap</h3>
+                    <p><strong>Goal:</strong> Move your favorite ideas from the "Brainstorming" pile to the "Production"
+                        pipeline.</p>
+                    <ol>
+                        <li><strong>Human Action:</strong> Review the generated ideas in the
+                            <code>2. Strategy Hub</code> or <code>3. Idea Lab</code> tab. In the Status Column (Column
+                            I), type or select "Approved" for the ideas you want to write.
+                        </li>
+                        <img src="images/docs/doc_image_11.png"
+                            alt="Screenshot showing an idea being marked as 'Approved' in the Idea Lab.">
+                        <li><strong>AI Action:</strong> Go to
+                            <code>Extensions > ContentDrive > Content AI Workflow > Step 3: Move Idea to Roadmap</code>.
+                        </li>
+                        <li>The system will cut the "Approved" rows and paste them into the
+                            <code>4. Content Roadmap 🗺️</code> tab.
+                        </li>
+                    </ol>
+
+                    <h3 id="usage-step-4">Step 4: Strategic Planning</h3>
+                    <p><strong>Goal:</strong> Flesh out the "Approved" ideas with angles, personas, and keywords.</p>
+                    <ul>
+                        <li>Navigate to the <code>4. Content Roadmap 🗺️</code> tab.</li>
+                        <li><strong>AI Action:</strong> Go to
+                            <code>Extensions > ContentDrive > Content AI Workflow > Step 4: AI Suggest Plan</code>.
+                        </li>
+                        <img src="images/docs/doc_image_12.png"
+                            alt="Screenshot showing the menu option for 'Step 4: AI Suggest Plan'.">
+                        <li>The AI will fill in the missing details for every row: Strategic Format, Core Angle, Working
+                            Title, and Target Persona.</li>
+                        <li><strong>Human Action:</strong> Review the plan. If ready, change the Brief Status column to
+                            "Ready for Briefing".</li>
+                    </ul>
+
+                    <h3 id="usage-step-5">Step 5: Create Content Briefs</h3>
+                    <p><strong>Goal:</strong> Generate a production-ready document for your writers.</p>
+                    <ol>
+                        <li>Select the cell of the idea you want to brief (click on the idea in Column A).</li>
+                        <li><strong>AI Action:</strong> Go to
+                            <code>Extensions > ContentDrive > Content AI Workflow > Step 5: AI Create Full Brief</code>.
+                        </li>
+                        <li>
+                            <strong>Output:</strong> The AI generates a detailed brief and saves it in the
+                            <code>5. Writer Briefs ✍️</code> tab. It includes a link to a Google Doc if configured, or
+                            keeps the text within the sheet.
+                            <br>
+                            <!-- THIS IS THE CORRECTLY PLACED IMAGE -->
+                            <img src="images/docs/doc_image_14.png"
+                                alt="Screenshot of the final, detailed writer's brief generated in the '5. Writer Briefs' tab.">
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- =================================================================== -->
+                <!-- PART 3: ADVANCED AUTOMATION -->
+                <!-- =================================================================== -->
+                <section id="advanced-automation" class="mt-5">
+                    <h2>Part 3: Advanced Automation (The "Pineline" Features)</h2>
+                    <p>For power users who want to automate drafting and asset creation. ContentDrive can extend beyond
+                        briefs into full content production. You can configure these integrations in the
+                        <strong>Settings ⚙️</strong> tab (Cells B10 and C10).
+                    </p>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered mt-3">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Tab Name</th>
+                                    <th>Function</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pineline A</td>
+                                    <td>AI Agents: Brief to Article</td>
+                                    <td>If you have a connected "Content Backlog" sheet, the AI can pick up a Brief and
+                                        write the Full Article in a Google Doc automatically.</td>
+                                </tr>
+                                <tr>
+                                    <td>Pineline B</td>
+                                    <td>Digital Asset Suite</td>
+                                    <td>For multimedia teams. The AI reads the brief and suggests image prompts, video
+                                        scripts, and slide decks in a separate "Assets" sheet.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- =================================================================== -->
+                <!-- PART 4: TROUBLESHOOTING -->
+                <!-- =================================================================== -->
+                <section id="troubleshooting" class="mt-5">
+                    <h2>🛑 QA & Troubleshooting Best Practices</h2>
+                    <p>Avoid these common errors to ensure the script runs smoothly.</p>
+                    <ul>
+                        <li><strong>Do Not Rename Tabs:</strong> The script looks for specific tab names (e.g., "1.
+                            Strategy Draft"). Renaming them will break the automation.</li>
+                        <li><strong>Exact Spelling Matters:</strong> When changing statuses manually (e.g., "Approved"
+                            or "Ready for Briefing"), ensure the spelling and capitalization match exactly.</li>
+                        <li><strong>One Step at a Time:</strong> Do not try to run "Step 5" if you haven't completed
+                            "Step 4." The AI needs the data from the previous columns to work.</li>
+                        <li><strong>Allow Processing Time:</strong> When you click a menu item, you will see a "Running
+                            Script" bar. Do not click anything else until the "Success" window pops up. This prevents
+                            timeouts.</li>
+                    </ul>
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+    <!-- END - Main Documentation Layout -->
+
+    <!-- START - Your Existing Footer -->
+    <footer class="new-footer">
+        <div class="container">
+            <div class="row footer-bottom-border">
+
+                <!-- Column 1: Find Us -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>Find us</h5>
+                    <p class="mb-3">ContentDrive is a product by Innoflow, a Google Cloud Partner.</p>
+                    <p><i class="fa fa-location-arrow"></i> 2 floor, Saigon Paragon Blds, Tan Hung Award, HCMC, VN</p>
+                    <p><i class="fa fa-phone"></i> +84-88.888.3458 (WhatsApp/Zalo/Viber)</p>
+                    <p><i class="fa fa-envelope"></i> hi@timkhachhang.net</p>
+                </div>
+
+                <!-- Column 2: Resources -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Video Tutorials</a></li>
+                        <li><a href="#">Download</a></li>
+                        <li><a href="#">User Guide</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Quick links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#price">Pricing</a></li>
+                        <li><a href="#faq-section">FAQ</a></li>
+                        <li><a href="https://contentdrive.app/terms-and-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="https://contentdrive.app/terms-and-conditions.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: About -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>About ContentDrive</h5>
+                    <p>We help overwhelmed marketers stop the content chaos and turn their strategy into high-quality,
+                        fully-briefed content campaigns—all inside Google Sheets.</p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Row: Copyright and Social Icons -->
+            <div class="row text-center">
+                <div class="col-12">
+                    <p class="copyright-text mb-2">Copyright &copy; 2025 | A Product by <a
+                            href="http://timkhachhang.net" target="_blank" rel="noopener">Innoflow</a>, founded by <a
+                            href="http://v.timkhachhang.net" target="_blank" rel="noopener">Vo Tu Duc</a></p>
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com/innoflows" aria-label="Facebook"><i
+                                    class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a href="https://x.com/votuduc" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://vn.linkedin.com/company/innoflows" aria-label="LinkedIn"><i
+                                    class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="https://www.youtube.com/hockieumy" aria-label="YouTube"><i
+                                    class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END - Footer -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
