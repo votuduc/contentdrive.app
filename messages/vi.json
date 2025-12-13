@@ -1,0 +1,193 @@
+{
+  "Payment": {
+    "title": "Thanh Toán An Toàn - ContentDrive",
+    "backHome": "Quay Lại Trang Chủ",
+    "orderSummary": "Tóm Tắt Đơn Hàng",
+    "loading": "Đang Tải Gói...",
+    "subscription": "Đăng Ký Hàng Tháng",
+    "whatsIncluded": "Bao Gồm Gì",
+    "discountCode": "Mã Giảm Giá",
+    "enterCode": "Nhập mã",
+    "apply": "Áp Dụng",
+    "totalDue": "Tổng thanh toán hôm nay",
+    "securePayment": "Thanh Toán An Toàn",
+    "paymentDesc": "Hoàn tất đăng ký của bạn một cách an toàn với PayPal. Bạn có thể hủy bất cứ lúc nào.",
+    "terms": "Bằng cách tiếp tục, bạn đồng ý với <link>Điều Khoản Dịch Vụ</link> của chúng tôi.<br>Khóa giấy phép của bạn sẽ được gửi đến email PayPal ngay sau khi thanh toán.",
+    "ssl": "Bảo Mật SSL",
+    "privacy": "Bảo Mật Dữ Liệu",
+    "sslAlt": "Biểu Tượng Bảo Mật SSL",
+    "privacyAlt": "Biểu Tượng Bảo Mật Dữ Liệu",
+    "success": "Thành công! Giảm {percent}% đã được áp dụng.",
+    "invalid": "Mã không hợp lệ.",
+    "error": "Lỗi khi kiểm tra mã.",
+    "proFeatures": {
+      "0": "Lên đến 100 bản tóm tắt/tháng",
+      "1": "Gửi Tự Động",
+      "2": "5 Tín Dụng Viết Bài/tháng",
+      "3": "Hỗ Trợ Ưu Tiên"
+    },
+    "businessFeatures": {
+      "0": "Bản Tóm Tắt AI Không Giới Hạn",
+      "1": "10 Tín Dụng Viết Bài/tháng",
+      "2": "5 Tín Dụng Tài Sản Số/tháng",
+      "3": "Cộng Tác Nhóm (5 Người Dùng)"
+    }
+  },
+  "ThankYou": {
+    "title": "Cảm Ơn!",
+    "subTitle": "Đăng ký của bạn đã được xử lý thành công.",
+    "licenseKeys": "Khóa giấy phép và hướng dẫn bắt đầu đã được gửi đến <strong1>địa chỉ email PayPal</strong1> của bạn.",
+    "spam": "Nếu bạn không nhận được email trong vài phút, vui lòng kiểm tra thư mục spam hoặc liên hệ hỗ trợ.",
+    "backHome": "Quay Lại Trang Chủ"
+  },
+  "Docs": {
+    "title": "Hướng Dẫn Sử Dụng ContentDrive",
+    "subtitle": "Biến Google Sheets thành Hệ Thống Vận Hành Nội Dung Được Hỗ Trợ Bởi AI.",
+    "install": "Cài Đặt",
+    "workflow": "Quy Trình",
+    "advanced": "Nâng Cao",
+    "support": "Hỗ Trợ"
+  },
+  "Navigation": {
+    "home": "Trang Chủ",
+    "howItWorks": "Cách Hoạt Động",
+    "pricing": "Bảng Giá",
+    "faq": "Câu Hỏi Thường Gặp",
+    "docs": "Tài Liệu",
+    "blog": "Blog"
+  },
+  "Hero": {
+    "titleStart": "Từ",
+    "titleStrategy": "Chiến Lược",
+    "titleMiddle": "đến toàn bộ",
+    "titleCampaign": "Chiến Dịch Nội Dung",
+    "titleIn": "trong vài",
+    "titleMinutes": "Phút.",
+    "description": "ContentDrive là chuyên gia chiến lược được hỗ trợ bởi AI, biến ý tưởng của bạn thành các chiến dịch nội dung được tóm tắt hoàn hảo trong Google Sheets. <green>Bạn</green> cung cấp ý tưởng, <yellow>AI</yellow> làm phần việc nặng nhọc.",
+    "cta": "Bắt Đầu Miễn Phí"
+  },
+  "Workflow": {
+    "titleStart": "Từ",
+    "titleStrategy": "Chiến Lược",
+    "titleMiddle": "đến",
+    "titleRoadmap": "Lộ Trình Nội Dung",
+    "titleEnd": "với AI",
+    "description": "ContentDrive biến quy trình thủ công của bạn thành một quy trình liền mạch được hỗ trợ bởi AI.",
+    "card1Title": "Từ Chiến Lược đến Cấu Trúc",
+    "card1Desc": "Ngừng để những ý tưởng tuyệt vời chết trong những ghi chú lộn xộn. Công cụ Tinh Chỉnh Chiến Lược AI của chúng tôi lấy đầu vào thô của bạn và ngay lập tức biến nó thành một bản tóm tắt chiến lược chuyên nghiệp gồm sáu phần hướng dẫn toàn bộ quy trình làm việc của bạn.",
+    "card2Title": "Động Não & Ưu Tiên",
+    "card2Desc": "Sử dụng chiến lược đã được phê duyệt của bạn để thúc đẩy một cuộc động não được hỗ trợ bởi AI. Phòng Thí Nghiệm Ý Tưởng tạo ra danh sách các chủ đề có tác động cao và chấm điểm chúng, vì vậy bạn luôn biết mình đang làm việc với nội dung đúng.",
+    "card3Title": "Giải Quyết \"Trang Trắng\"",
+    "card3Desc": "Chuyển từ một ý tưởng được ưu tiên thành một bản tóm tắt hoàn chỉnh cho người viết chỉ bằng một cú nhấp chuột. AI tạo ra một dàn ý chi tiết, mục tiêu và lời kêu gọi hành động, sẵn sàng để nhóm sáng tạo của bạn thực hiện ngay lập tức."
+  },
+  "Agents": {
+    "titleStart": "Gặp Gỡ",
+    "titleTeam": "Đội Ngũ Nội Dung AI",
+    "titleEnd": "Của Bạn",
+    "description": "ContentDrive không phải là một AI đơn lẻ. Đó là một hệ thống các tác nhân chuyên biệt, mỗi tác nhân là chuyên gia trong nhiệm vụ cụ thể của nó trong quy trình nội dung.",
+    "agent1Title": "Nhà Chiến Lược",
+    "agent1Desc": "Biến những ghi chú thô, không có cấu trúc của bạn thành Chiến Lược Cốt Lõi chuyên nghiệp gồm sáu phần hướng dẫn toàn bộ chiến dịch.",
+    "agent2Title": "Người Động Não",
+    "agent2Desc": "Đọc chiến lược đã được phê duyệt của bạn và tạo ra hàng chục ý tưởng nội dung có tác động cao, phù hợp để bạn xem xét và ưu tiên.",
+    "agent3Title": "Người Lập Kế Hoạch",
+    "agent3Desc": "Lấy một ý tưởng đã được phê duyệt duy nhất và đề xuất định dạng tối ưu, một góc độ độc đáo, một tiêu đề hấp dẫn và một từ khóa SEO chính."
+  },
+  "BeyondBrief": {
+    "titleStart": "Vượt",
+    "titleBeyond": "Ra Ngoài",
+    "titleEnd": "Bản Tóm Tắt.",
+    "description": "ContentDrive không chỉ là một công cụ lập kế hoạch. Đó là một <strong1>công cụ điều phối</strong1> gửi các bản tóm tắt đã được phê duyệt của bạn đến các quy trình sản xuất AI chuyên biệt.",
+    "pipelineATitle": "Quy Trình A: Người Viết Bài Đầy Đủ",
+    "pipelineADesc": "Ngừng nhìn chằm chằm vào <strong1>trang trắng</strong1>. Gửi bản tóm tắt của bạn đến <strong2>Tác Nhân Viết</strong2> của chúng tôi, một hệ thống đa tác nhân lấy dàn ý do AI tạo ra của bạn và viết một bản nháp đầu tiên hoàn toàn thân thiện với SEO cho bài viết của bạn kèm theo hình ảnh.",
+    "pipelineALabel": "⭐ Bao gồm dưới dạng tín dụng trong các gói Pro & Business",
+    "pipelineBTitle": "Quy Trình B: Bộ Tài Sản Số Đầy Đủ",
+    "pipelineBDesc": "Nhân tác động của bạn mà không nhân nỗ lực của bạn. Gửi bản tóm tắt của bạn đến <strong1>Bộ Tài Sản Số</strong1> của chúng tôi để tạo ra một bộ tài liệu quảng cáo đầy đủ: bộ sưu tập Google Slide, hình ảnh mạng xã hội, âm thanh riêng biệt và kịch bản video. Hỗ trợ nhiều ngôn ngữ!",
+    "pipelineBLabel": "⭐ Bao gồm dưới dạng tín dụng trong gói Business"
+  },
+  "Empathy": {
+    "title": "Nghe Quen Thuộc?",
+    "description": "ContentDrive được xây dựng <strong1>cho nhà tiếp thị quá tải</strong1> đang phải xoay xở quá nhiều thứ.",
+    "point1": "Bạn là toàn bộ đội ngũ tiếp thị, cố gắng quản lý hàng trăm \"ý tưởng tuyệt vời\" từ khắp công ty.",
+    "point2": "'Lịch nội dung' của bạn là một bảng tính hỗn loạn giống như một nghĩa địa cho những ý định tốt hơn.",
+    "point3": "Bạn biết mình cần một hệ thống tốt hơn, nhưng bạn không có thời gian để xây dựng một hệ thống hoặc ngân sách cho các nền tảng đắt tiền.",
+    "point4": "Bạn dành nhiều thời gian quản lý quy trình hơn là tạo ra nội dung tuyệt vời."
+  },
+  "Pricing": {
+    "title": "Tìm Gói Phù Hợp Với Bạn",
+    "description": "Bắt đầu miễn phí và mở rộng khi công cụ nội dung của bạn phát triển.",
+    "month": "/tháng",
+    "freePlan": {
+      "name": "Miễn Phí",
+      "price": "$0",
+      "limit": "Giới hạn 5 bản tóm tắt/tháng",
+      "cta": "Bắt Đầu Miễn Phí",
+      "subtext": "Cho cá nhân khám phá quy trình cốt lõi.",
+      "features": {
+        "strategy": "Công Cụ Tinh Chỉnh Chiến Lược AI",
+        "idea": "Tạo Ý Tưởng AI",
+        "briefs": "Bản Tóm Tắt Được Hỗ Trợ Bởi AI",
+        "dispatch": "Gửi Tự Động",
+        "writers": "Người Viết Bài"
+      }
+    },
+    "proPlan": {
+      "badge": "Phổ Biến Nhất",
+      "name": "Pro",
+      "price": "$29",
+      "limit": "Lên đến 100 bản tóm tắt/tháng",
+      "cta": "Bắt Đầu Với Pro",
+      "subtext": "Cho nhà tiếp thị solo tự động hóa sản xuất.",
+      "features": {
+        "allFree": "Mọi thứ trong Miễn Phí, cộng thêm:",
+        "dispatch": "Gửi Tự Động",
+        "writers": "5 Tín Dụng Viết Bài/tháng",
+        "assets": "Bộ Tài Sản Số",
+        "team": "Cộng Tác Nhóm"
+      }
+    },
+    "businessPlan": {
+      "name": "Business",
+      "price": "$99",
+      "limit": "Bản tóm tắt không giới hạn & tính năng nhóm",
+      "cta": "Chọn Business",
+      "subtext": "Cho các đại lý & nhóm đang mở rộng.",
+      "features": {
+        "allPro": "Mọi thứ trong Pro, cộng thêm:",
+        "briefs": "Bản Tóm Tắt AI Không Giới Hạn",
+        "writers": "10 Tín Dụng Viết Bài/tháng",
+        "assets": "5 Tín Dụng Tài Sản Số/tháng",
+        "team": "Cộng Tác Nhóm (5 Người Dùng)"
+      }
+    }
+  },
+  "FAQ": {
+    "title": "Câu Hỏi Thường Gặp",
+    "q1": "ContentDrive chính xác là gì?",
+    "a1": "<strong>ContentDrive</strong> là một tiện ích bổ sung thông minh cho Google Sheets biến bảng tính quen thuộc của bạn thành một <strong>công cụ điều phối nội dung mạnh mẽ được hỗ trợ bởi AI.</strong> Nó được thiết kế để quản lý <strong>toàn bộ quy trình tiền sản xuất nội dung của bạn</strong>, từ việc tinh chỉnh một ý tưởng thô thành một chiến lược vững chắc đến việc tạo ra một bản tóm tắt chi tiết.",
+    "q2": "Đây chỉ là một công cụ viết AI khác như ChatGPT?",
+    "a2": "Hoàn toàn không. Mặc dù chúng tôi sử dụng AI mạnh mẽ, ContentDrive là một <strong>công cụ quy trình chiến lược</strong>, không chỉ là một người viết. Mục đích chính của nó là giải quyết sự hỗn loạn hoạt động xảy ra <strong><em>trước khi</em></strong> bạn viết. Nó cung cấp một quy trình có cấu trúc cho việc lập kế hoạch, ý tưởng và ưu tiên.",
+    "q3": "Tôi nhận được gì với gói Miễn Phí?",
+    "a3": "Gói Miễn Phí cho phép bạn truy cập vào quy trình cốt lõi hoàn chỉnh. Bạn có thể sử dụng Công Cụ Tinh Chỉnh Chiến Lược AI, động não ý tưởng và tạo ra tối đa 5 bản tóm tắt hoàn chỉnh, chi tiết cho người viết mỗi tháng.",
+    "q4": "ContentDrive được thiết kế cho ai?",
+    "a4": "ContentDrive được xây dựng cho <strong>các nhà tiếp thị quá tải</strong>, người sáng tạo nội dung solo và chủ doanh nghiệp nhỏ cần chuẩn hóa quy trình làm việc của họ và mở rộng sản xuất nội dung một cách hiệu quả mà không cần thêm nhân sự.",
+    "q5": "Tôi có thể hủy gói của mình bất cứ lúc nào không?",
+    "a5": "<strong>Hoàn toàn có thể.</strong> Bạn có toàn quyền kiểm soát đăng ký của mình. Bạn có thể nâng cấp, hạ cấp hoặc hủy gói của mình bất cứ lúc nào, không có câu hỏi nào được hỏi."
+  },
+  "Footer": {
+    "findUs": "Tìm Chúng Tôi",
+    "address": "Tầng 2, Tòa nhà Saigon Paragon, Quận Tân Hưng, TP.HCM, VN",
+    "resources": "Tài Nguyên",
+    "videoTutorials": "Hướng Dẫn Video",
+    "downloadAddon": "Tải Tiện Ích Bổ Sung",
+    "userGuide": "Hướng Dẫn Sử Dụng",
+    "supportCenter": "Trung Tâm Hỗ Trợ",
+    "quickLinks": "Liên Kết Nhanh",
+    "pricing": "Bảng Giá",
+    "faq": "Câu Hỏi Thường Gặp",
+    "terms": "Điều Khoản & Điều Kiện",
+    "privacy": "Chính Sách Bảo Mật",
+    "about": "Về ContentDrive",
+    "aboutDesc": "Chúng tôi giúp các nhà tiếp thị quá tải ngừng sự hỗn loạn nội dung và biến chiến lược của họ thành các chiến dịch nội dung chất lượng cao, được tóm tắt đầy đủ—tất cả trong Google Sheets.",
+    "copyright": "Bản quyền © 2025 | Sản phẩm của"
+  }
+}

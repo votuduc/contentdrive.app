@@ -1,0 +1,192 @@
+{
+    "Payment": {
+        "title": "Paiement Sécurisé - ContentDrive",
+        "backHome": "Retour à l'accueil",
+        "orderSummary": "Résumé de la commande",
+        "loading": "Chargement du plan...",
+        "subscription": "Abonnement Mensuel",
+        "whatsIncluded": "Ce qui est inclus",
+        "discountCode": "Code de réduction",
+        "enterCode": "Entrer le code",
+        "apply": "Appliquer",
+        "totalDue": "Total à payer aujourd'hui",
+        "securePayment": "Paiement Sécurisé",
+        "paymentDesc": "Complétez votre abonnement en toute sécurité avec PayPal. Vous pouvez annuler à tout moment.",
+        "terms": "En procédant, vous acceptez nos <link>Conditions d'utilisation</link>.<br>Votre clé de licence sera envoyée à votre adresse email PayPal immédiatement après le paiement.",
+        "ssl": "SSL Sécurisé",
+        "privacy": "Confidentialité des données",
+        "sslAlt": "Icône SSL Sécurisé",
+        "privacyAlt": "Icône Confidentialité des données",
+        "success": "Succès ! {percent}% de réduction appliqués.",
+        "invalid": "Code invalide.",
+        "error": "Erreur lors de la vérification du code.",
+        "proFeatures": {
+            "0": "Jusqu'à 100 briefs/mois",
+            "1": "Envoi Automatisé",
+            "2": "5 Crédits de Rédaction d'Articles/mois",
+            "3": "Support Prioritaire"
+        },
+        "businessFeatures": {
+            "0": "Briefs IA Illimités",
+            "1": "10 Crédits de Rédaction d'Articles/mois",
+            "2": "5 Crédits d'Actifs Numériques/mois",
+            "3": "Collaboration d'Équipe (5 Utilisateurs)"
+        }
+    },
+    "ThankYou": {
+        "title": "Merci !",
+        "subTitle": "Votre abonnement a été traité avec succès.",
+        "licenseKeys": "Votre clé de licence et les instructions de démarrage ont été envoyées à votre <strong1>adresse email PayPal</strong1>.",
+        "spam": "Si vous ne recevez pas l'email dans quelques minutes, veuillez vérifier votre dossier spam ou contacter le support.",
+        "backHome": "Retour à l'accueil"
+    },
+    "Docs": {
+        "title": "Guide Utilisateur ContentDrive",
+        "subtitle": "Transformez Google Sheets en un système d'opération de contenu alimenté par l'IA.",
+        "install": "Installation",
+        "workflow": "Flux de travail",
+        "advanced": "Avancé",
+        "support": "Support"
+    },
+    "Navigation": {
+        "home": "Accueil",
+        "howItWorks": "Comment ça marche",
+        "pricing": "Tarifs",
+        "faq": "FAQ",
+        "docs": "Docs",
+        "blog": "Blog"
+    },
+    "Hero": {
+        "titleStart": "Passez de la",
+        "titleStrategy": "Stratégie",
+        "titleMiddle": "à une",
+        "titleCampaign": "Campagne de Contenu",
+        "titleIn": "en",
+        "titleMinutes": "Minutes.",
+        "description": "ContentDrive est votre stratège alimenté par l'IA, transformant vos idées en campagnes de contenu parfaitement briefées directement dans Google Sheets. <green>Vous</green> fournissez l'étincelle, <yellow>l'IA</yellow> fait le gros du travail.",
+        "cta": "Commencer Gratuitement"
+    },
+    "Workflow": {
+        "titleStart": "De la",
+        "titleStrategy": "Stratégie",
+        "titleMiddle": "à la",
+        "titleRoadmap": "Feuille de Route",
+        "titleEnd": "avec l'IA",
+        "description": "ContentDrive transforme votre processus manuel en un pipeline transparent alimenté par l'IA.",
+        "card1Title": "De la Stratégie à la Structure",
+        "card1Desc": "Arrêtez de laisser mourir les grandes idées dans des notes désordonnées. Notre raffineur de stratégie IA prend votre entrée brute et la transforme instantanément en un brief stratégique professionnel en six parties qui guide tout votre flux de travail.",
+        "card2Title": "Brainstorming & Priorisation",
+        "card2Desc": "Utilisez votre stratégie approuvée pour alimenter un brainstorming assisté par l'IA. Le Labo d'Idées génère une liste de sujets à fort impact et les note, afin que vous sachiez toujours que vous travaillez sur le bon contenu.",
+        "card3Title": "Combattre la \"Page Blanche\"",
+        "card3Desc": "Passez d'une idée priorisée à un brief de rédacteur complet en un seul clic. L'IA génère un plan détaillé, des objectifs et un appel à l'action, prêts à être exécutés instantanément par votre équipe créative."
+    },
+    "Agents": {
+        "titleStart": "Rencontrez Votre",
+        "titleTeam": "Équipe de Contenu IA",
+        "description": "ContentDrive n'est pas une simple IA. C'est un système d'agents spécialisés, chacun expert dans sa tâche spécifique du flux de travail de contenu.",
+        "agent1Title": "Le Stratège",
+        "agent1Desc": "Transforme vos notes brutes et non structurées en une Stratégie de Base professionnelle en six parties qui guide toute la campagne.",
+        "agent2Title": "Le Brainstormeur",
+        "agent2Desc": "Lit votre stratégie approuvée et génère des dizaines d'idées de contenu pertinentes et à fort impact pour que vous les examiniez et les priorisiez.",
+        "agent3Title": "Le Planificateur",
+        "agent3Desc": "Prend une idée approuvée unique et suggère le format optimal, un angle unique, un titre convaincant et un mot-clé SEO principal."
+    },
+    "BeyondBrief": {
+        "titleStart": "Allez",
+        "titleBeyond": "Au-delà",
+        "titleEnd": "du Brief.",
+        "description": "ContentDrive est plus qu'un planificateur. C'est un <strong1>moteur d'orchestration</strong1> qui envoie vos briefs approuvés vers des pipelines de production IA spécialisés.",
+        "pipelineATitle": "Pipeline A : Le Rédacteur d'Article Complet",
+        "pipelineADesc": "Arrêtez de regarder une <strong1>page blanche</strong1>. Envoyez votre brief à notre <strong2>Agent Rédacteur</strong2>, un système multi-agents qui prend votre plan généré par l'IA et rédige un premier brouillon d'article entièrement optimisé pour le SEO avec des images.",
+        "pipelineALabel": "⭐ Inclus comme crédits dans les plans Pro & Business",
+        "pipelineBTitle": "Pipeline B : Suite Complète d'Actifs Numériques",
+        "pipelineBDesc": "Multipliez votre impact sans multiplier vos efforts. Envoyez votre brief à notre <strong1>Suite d'Actifs Numériques</strong1> pour générer un ensemble complet de supports promotionnels : présentation Google Slide, images pour réseaux sociaux, audio distinct et scripts vidéo. Prend en charge plusieurs langues !",
+        "pipelineBLabel": "⭐ Inclus comme crédits dans le plan Business"
+    },
+    "Empathy": {
+        "title": "Cela vous semble familier ?",
+        "description": "ContentDrive a été conçu <strong1>pour le marketeur débordé</strong1> qui jongle avec trop de choses.",
+        "point1": "Vous êtes toute l'équipe marketing, essayant de gérer une centaine de \"grandes idées\" venant de toute l'entreprise.",
+        "point2": "Votre 'calendrier de contenu' est un tableau chaotique qui ressemble plus à un cimetière de bonnes intentions.",
+        "point3": "Vous savez que vous avez besoin d'un meilleur système, mais vous n'avez pas le temps d'en construire un ni le budget pour des plateformes coûteuses.",
+        "point4": "Vous passez plus de temps à gérer le processus qu'à créer du bon contenu."
+    },
+    "Pricing": {
+        "title": "Trouvez le Plan qui Vous Convient",
+        "description": "Commencez gratuitement et évoluez à mesure que votre moteur de contenu grandit.",
+        "month": "/mois",
+        "freePlan": {
+            "name": "Gratuit",
+            "price": "$0",
+            "limit": "Limité à 5 briefs/mois",
+            "cta": "Commencer Gratuitement",
+            "subtext": "Pour les individus explorant le flux de travail principal.",
+            "features": {
+                "strategy": "Raffineur de Stratégie IA",
+                "idea": "Génération d'Idées IA",
+                "briefs": "Briefs Propulsés par l'IA",
+                "dispatch": "Envoi Automatisé",
+                "writers": "Rédacteurs d'Articles"
+            }
+        },
+        "proPlan": {
+            "badge": "Le Plus Populaire",
+            "name": "Pro",
+            "price": "$29",
+            "limit": "Jusqu'à 100 briefs/mois",
+            "cta": "Commencer avec Pro",
+            "subtext": "Pour les marketeurs solo automatisant la production.",
+            "features": {
+                "allFree": "Tout ce qui est dans Gratuit, plus :",
+                "dispatch": "Envoi Automatisé",
+                "writers": "5 Crédits de Rédaction d'Articles/mois",
+                "assets": "Suite d'Actifs Numériques",
+                "team": "Collaboration d'Équipe"
+            }
+        },
+        "businessPlan": {
+            "name": "Business",
+            "price": "$99",
+            "limit": "Briefs illimités & fonctionnalités d'équipe",
+            "cta": "Choisir Business",
+            "subtext": "Pour les agences et les équipes en pleine croissance.",
+            "features": {
+                "allPro": "Tout ce qui est dans Pro, plus :",
+                "briefs": "Briefs IA Illimités",
+                "writers": "10 Crédits de Rédaction d'Articles/mois",
+                "assets": "5 Crédits d'Actifs Numériques/mois",
+                "team": "Collaboration d'Équipe (5 Utilisateurs)"
+            }
+        }
+    },
+    "FAQ": {
+        "title": "Foire Aux Questions",
+        "q1": "Qu'est-ce que ContentDrive exactement ?",
+        "a1": "<strong>ContentDrive</strong> est un module complémentaire intelligent pour Google Sheets qui transforme votre tableur familier en un puissant <strong>moteur d'orchestration de contenu piloté par l'IA.</strong> Il est conçu pour gérer <strong>tout votre flux de pré-production de contenu</strong>, du raffinement d'une idée brute en une stratégie solide à la génération d'un brief détaillé.",
+        "q2": "Est-ce juste un autre rédacteur IA comme ChatGPT ?",
+        "a2": "Pas du tout. Bien que nous utilisions une IA puissante, ContentDrive est un <strong>outil de flux de travail stratégique</strong>, pas juste un rédacteur. Son but principal est de résoudre le chaos opérationnel qui survient <strong><em>avant</em></strong> que vous n'écriviez. Il fournit un processus structuré pour la planification, l'idéation et la priorisation.",
+        "q3": "Qu'est-ce que j'obtiens avec le plan Gratuit ?",
+        "a3": "Le plan Gratuit vous donne accès au flux de travail principal complet. Vous pouvez utiliser le Raffineur de Stratégie IA, brainstormer des idées et générer jusqu'à 5 briefs de rédacteur complets et détaillés par mois.",
+        "q4": "Pour qui ContentDrive est-il conçu ?",
+        "a4": "ContentDrive a été conçu pour les <strong>marketeurs débordés</strong>, les créateurs de contenu solo et les propriétaires de petites entreprises qui ont besoin de standardiser leur flux de travail et de faire évoluer la production de contenu efficacement sans ajouter de personnel.",
+        "q5": "Puis-je annuler mon plan à tout moment ?",
+        "a5": "<strong>Absolument.</strong> Vous avez un contrôle total sur votre abonnement. Vous pouvez mettre à niveau, rétrograder ou annuler votre plan à tout moment, sans poser de questions."
+    },
+    "Footer": {
+        "findUs": "Nous trouver",
+        "address": "2ème étage, Saigon Paragon Blds, Tan Hung Award, HCMC, VN",
+        "resources": "Ressources",
+        "videoTutorials": "Tutoriels Vidéo",
+        "downloadAddon": "Télécharger l'Add-on",
+        "userGuide": "Guide Utilisateur",
+        "supportCenter": "Centre de Support",
+        "quickLinks": "Liens Rapides",
+        "pricing": "Tarification",
+        "faq": "FAQ",
+        "terms": "Conditions Générales",
+        "privacy": "Politique de Confidentialité",
+        "about": "À propos de ContentDrive",
+        "aboutDesc": "Nous aidons les marketeurs débordés à arrêter le chaos du contenu et à transformer leur stratégie en campagnes de contenu de haute qualité et entièrement briefées — le tout dans Google Sheets.",
+        "copyright": "Copyright © 2025 | Un produit par"
+    }
+}

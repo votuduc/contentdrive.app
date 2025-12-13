@@ -1,0 +1,192 @@
+{
+  "Payment": {
+    "title": "Secure Checkout - ContentDrive",
+    "backHome": "Back to Home",
+    "orderSummary": "Order Summary",
+    "loading": "Loading Plan...",
+    "subscription": "Monthly Subscription",
+    "whatsIncluded": "What's Included",
+    "discountCode": "Discount Code",
+    "enterCode": "Enter code",
+    "apply": "Apply",
+    "totalDue": "Total due today",
+    "securePayment": "Secure Payment",
+    "paymentDesc": "Complete your subscription safely with PayPal. You can cancel at any time.",
+    "terms": "By proceeding, you agree to our <link>Terms of Service</link>.<br>Your license key will be sent to your PayPal email immediately after payment.",
+    "ssl": "SSL Secure",
+    "privacy": "Data Privacy",
+    "sslAlt": "SSL Secure Icon",
+    "privacyAlt": "Data Privacy Icon",
+    "success": "Success! {percent}% off applied.",
+    "invalid": "Invalid code.",
+    "error": "Error checking code.",
+    "proFeatures": {
+      "0": "Up to 100 briefs/month",
+      "1": "Automated Dispatch",
+      "2": "5 Article Writer Credits/mo",
+      "3": "Priority Support"
+    },
+    "businessFeatures": {
+      "0": "Unlimited AI Briefs",
+      "1": "10 Article Writer Credits/mo",
+      "2": "5 Digital Asset Credits/mo",
+      "3": "Team Collaboration (5 Users)"
+    }
+  },
+  "ThankYou": {
+    "title": "Thank You!",
+    "subTitle": "Your subscription has been successfully processed.",
+    "licenseKeys": "Your license key and getting-started instructions have been sent to your <strong1>PayPal email address</strong1>.",
+    "spam": "If you don't receive the email within a few minutes, please check your spam folder or contact support.",
+    "backHome": "Back to Home"
+  },
+  "Docs": {
+    "title": "ContentDrive User Guide",
+    "subtitle": "Turn Google Sheets into an AI-Powered Content Operation System.",
+    "install": "Installation",
+    "workflow": "Workflow",
+    "advanced": "Advanced",
+    "support": "Support"
+  },
+  "Navigation": {
+    "home": "Home",
+    "howItWorks": "How it Works",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "docs": "Docs",
+    "blog": "Blog"
+  },
+  "Hero": {
+    "titleStart": "Go from",
+    "titleStrategy": "Strategy",
+    "titleMiddle": "to an Entire",
+    "titleCampaign": "Content Campaign",
+    "titleIn": "in",
+    "titleMinutes": "Minutes.",
+    "description": "ContentDrive is your AI-powered strategist, turning your ideas into perfectly briefed content campaigns inside Google Sheets. <green>You</green> provide the spark, <yellow>AI</yellow> does the heavy lifting.",
+    "cta": "Start for Free"
+  },
+  "Workflow": {
+    "titleStart": "From",
+    "titleStrategy": "Strategy",
+    "titleMiddle": "to",
+    "titleRoadmap": "Content Roadmap",
+    "titleEnd": "with AI",
+    "description": "ContentDrive transforms your manual process into a seamless, AI-powered pipeline.",
+    "card1Title": "From Strategy to Structure",
+    "card1Desc": "Stop letting great ideas die in messy notes. Our AI Strategy Refiner takes your raw input and instantly transforms it into a professional, six-part strategic brief that guides your entire workflow.",
+    "card2Title": "Brainstorm & Prioritize",
+    "card2Desc": "Use your approved strategy to fuel an AI-powered brainstorm. The Idea Lab generates a list of high-impact topics and scores them, so you always know you're working on the right content.",
+    "card3Title": "Solve the \"Blank Page\"",
+    "card3Desc": "Go from a prioritized idea to a complete writer's brief in a single click. The AI generates a detailed outline, objectives, and a call-to-action, ready for your creative team to execute instantly."
+  },
+  "Agents": {
+    "titleStart": "Meet Your",
+    "titleTeam": "AI Content Team",
+    "description": "ContentDrive isn't a single AI. It's a system of specialized agents, each an expert at its specific task in the content workflow.",
+    "agent1Title": "The Strategist",
+    "agent1Desc": "Transforms your raw, unstructured notes into a professional, six-part Core Strategy that guides the entire campaign.",
+    "agent2Title": "The Brainstormer",
+    "agent2Desc": "Reads your approved strategy and generates dozens of high-impact, relevant content ideas for you to review and prioritize.",
+    "agent3Title": "The Planner",
+    "agent3Desc": "Takes a single approved idea and suggests the optimal format, a unique angle, a compelling title, and a primary SEO keyword."
+  },
+  "BeyondBrief": {
+    "titleStart": "Go",
+    "titleBeyond": "Beyond",
+    "titleEnd": "the Brief.",
+    "description": "ContentDrive is more than a planner. It's an <strong1>orchestration engine</strong1> that dispatches your approved briefs to specialized AI production pipelines.",
+    "pipelineATitle": "Pipeline A: The Full Article Writer",
+    "pipelineADesc": "Stop staring at a <strong1>blank page</strong1>. Dispatch your brief to our <strong2>Writer Agent</strong2>, a multi-agent system that takes your AI-generated outline and writes a completely SEO-friendly first draft of your article with images.",
+    "pipelineALabel": "⭐ Included as credits in Pro & Business plans",
+    "pipelineBTitle": "Pipeline B: Full Digital Asset Suite",
+    "pipelineBDesc": "Multiply your impact without multiplying your effort. Dispatch your brief to our <strong1>Digital Asset Suite</strong1> to generate a full set of promotional materials: Google Slide deck, social media images, distinct audio, and video scripts. Supports multiple languages!",
+    "pipelineBLabel": "⭐ Included as credits in Business plan"
+  },
+  "Empathy": {
+    "title": "Sound Familiar?",
+    "description": "ContentDrive was built <strong1>for the overwhelmed marketer</strong1> who's juggling too much.",
+    "point1": "You're the entire marketing team, trying to manage a hundred \"great ideas\" from across the company.",
+    "point2": "Your 'content calendar' is a chaotic spreadsheet that feels more like a graveyard for good intentions.",
+    "point3": "You know you need a better system, but you don't have the time to build one or the budget for expensive platforms.",
+    "point4": "You spend more time managing the process than you do creating great content."
+  },
+  "Pricing": {
+    "title": "Find the Plan That's Right for You",
+    "description": "Start for free and scale as your content engine grows.",
+    "month": "/month",
+    "freePlan": {
+      "name": "Free",
+      "price": "$0",
+      "limit": "Limited to 5 briefs/month",
+      "cta": "Start for Free",
+      "subtext": "For individuals exploring the core workflow.",
+      "features": {
+        "strategy": "AI Strategy Refiner",
+        "idea": "AI Idea Generation",
+        "briefs": "AI-Powered Briefs",
+        "dispatch": "Automated Dispatch",
+        "writers": "Article Writers"
+      }
+    },
+    "proPlan": {
+      "badge": "Most Popular",
+      "name": "Pro",
+      "price": "$29",
+      "limit": "Up to 100 briefs/month",
+      "cta": "Get Started with Pro",
+      "subtext": "For solo marketers automating production.",
+      "features": {
+        "allFree": "Everything in Free, plus:",
+        "dispatch": "Automated Dispatch",
+        "writers": "5 Article Writer Credits/mo",
+        "assets": "Digital Asset Suite",
+        "team": "Team Collaboration"
+      }
+    },
+    "businessPlan": {
+      "name": "Business",
+      "price": "$99",
+      "limit": "Unlimited briefs & team features",
+      "cta": "Choose Business",
+      "subtext": "For agencies & teams scaling up.",
+      "features": {
+        "allPro": "Everything in Pro, plus:",
+        "briefs": "Unlimited AI Briefs",
+        "writers": "10 Article Writer Credits/mo",
+        "assets": "5 Digital Asset Credits/mo",
+        "team": "Team Collaboration (5 Users)"
+      }
+    }
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "q1": "What exactly is ContentDrive?",
+    "a1": "<strong>ContentDrive</strong> is a smart add-on for Google Sheets that transforms your familiar spreadsheet into a powerful, <strong>AI-driven content orchestration engine.</strong> It’s designed to manage <strong>your entire content pre-production workflow</strong>, from refining a raw idea into a solid strategy to generating a detailed brief.",
+    "q2": "Is this just another AI writer like ChatGPT?",
+    "a2": "Not at all. While we use powerful AI, ContentDrive is a <strong>strategic workflow tool</strong>, not just a writer. Its primary purpose is to solve the operational chaos that happens <strong><em>before</em></strong> you write. It provides a structured process for planning, ideation, and prioritization.",
+    "q3": "What do I get with the Free plan?",
+    "a3": "The Free plan gives you access to the complete core workflow. You can use the AI Strategy Refiner, brainstorm ideas, and generate up to 5 complete, detailed writer's briefs per month.",
+    "q4": "Who is ContentDrive designed for?",
+    "a4": "ContentDrive was built for <strong>overwhelmed marketers</strong>, solo content creators, and small business owners who need to standardize their workflow and scale content production efficiently without adding headcount.",
+    "q5": "Can I cancel my plan at any time?",
+    "a5": "<strong>Absolutely.</strong> You have full control over your subscription. You can upgrade, downgrade, or cancel your plan at any time, no questions asked."
+  },
+  "Footer": {
+    "findUs": "Find us",
+    "address": "2 floor, Saigon Paragon Blds, Tan Hung Award, HCMC, VN",
+    "resources": "Resources",
+    "videoTutorials": "Video Tutorials",
+    "downloadAddon": "Download Add-on",
+    "userGuide": "User Guide",
+    "supportCenter": "Support Center",
+    "quickLinks": "Quick Links",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "about": "About ContentDrive",
+    "aboutDesc": "We help overwhelmed marketers stop the content chaos and turn their strategy into high-quality, fully-briefed content campaigns—all inside Google Sheets.",
+    "copyright": "Copyright © 2025 | A Product by"
+  }
+}
