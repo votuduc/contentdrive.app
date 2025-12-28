@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 // Fonts removed in favor of Google Sans
 import "../globals.css";
 
@@ -80,6 +81,20 @@ export default async function LocaleLayout({
         <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" />
       </head>
       <body className="antialiased font-sans">
+        {/* Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-ER35MV56D3"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ER35MV56D3');
+          `}
+        </Script>
+
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
