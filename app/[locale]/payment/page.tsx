@@ -20,13 +20,13 @@ const PLANS: Record<string, PlanDetail> = {
     "PRO": {
         name: "Pro Plan",
         price: 29.00,
-        id: "P-6GK30767G94091318NEA5GVY",
+        id: "P-98054850T19910005NEBSO7Y",
         featuresKey: 'proFeatures'
     },
     "BUSINESS": {
         name: "Business Plan",
         price: 99.00,
-        id: "P-9XH43012K32457045NEA5HLQ",
+        id: "P-4FW79619RC779382RNEBSPPA",
         featuresKey: 'businessFeatures'
     }
 };
