@@ -64,6 +64,10 @@ export default function PaymentPage() {
             const response = await fetch(`${VALIDATOR_API_URL}?code=${code}`);
             const data = await response.json();
 
+            console.log('🔍 Discount API Response:', data);
+            console.log('👉 Current Plan Before:', currentPlan);
+            if (data.target_plan_id) console.log('🎯 Target Plan ID from API:', data.target_plan_id);
+
             if (data.valid && data.target_plan_id) {
                 // Update to discounted Plan ID
                 setCurrentPlanId(data.target_plan_id);
