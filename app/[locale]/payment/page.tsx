@@ -7,7 +7,7 @@ import { Link, useRouter, usePathname } from '@/i18n/routing';
 import { useSearchParams } from 'next/navigation';
 
 const PAYPAL_CLIENT_ID = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || "AXxPC5qauR2oKGWOtsVi9Wy4LsMfmRSSzhmFtaaKSIflM6m2Du_-0mDyfgItdvHfTPAtst_bPvIhmHAu";
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzS4QaCaAr0-FdqP9E08awc2zHzQe5CLDv2MyvpQIbIDS0EjfyfnDCVmxBCbbgNrDPL/exec';
+const VALIDATOR_API_URL = 'https://script.google.com/macros/s/AKfycbwGWS8VlhT9LFU_cqlmQr8ZwbgRpdOygsgwucuTWAcnVMnWpFy24EwKq-hWRKpoFhw/exec';
 
 type PlanDetail = {
     name: string;
@@ -36,7 +36,7 @@ export default function PaymentPage() {
     const searchParams = useSearchParams();
     const planParam = searchParams.get('plan');
     const [selectedPlanKey, setSelectedPlanKey] = useState<string>('PRO');
-    const [discount, setDiscount] = useState({ percentage: 0, code: "" });
+    const [currentPlanId, setCurrentPlanId] = useState<string>('');
     const [discountMessage, setDiscountMessage] = useState<{ text: string, type: 'success' | 'error' } | null>(null);
     const [isLoadingDiscount, setIsLoadingDiscount] = useState(false);
     const discountInputRef = useRef<HTMLInputElement>(null);
@@ -47,16 +47,12 @@ export default function PaymentPage() {
         let key = planParam ? planParam.toUpperCase() : 'PRO';
         if (!PLANS[key]) key = 'PRO';
         setSelectedPlanKey(key);
+        setCurrentPlanId(PLANS[key].id); // Initialize with default Plan ID
     }, [planParam]);
 
     const currentPlan = PLANS[selectedPlanKey];
 
-    // Calculate Total
-    const finalPrice = discount.percentage > 0
-        ? (currentPlan.price * (1 - discount.percentage / 100))
-        : currentPlan.price;
-
-    // Apply Discount
+    // Apply Discount - New Dynamic Plan ID Logic
     const applyDiscount = async () => {
         const code = discountInputRef.current?.value.trim();
         if (!code) return;
@@ -65,18 +61,20 @@ export default function PaymentPage() {
         setDiscountMessage(null);
 
         try {
-            const response = await fetch(`${SCRIPT_URL}?discountCode=${code}`);
+            const response = await fetch(`${VALIDATOR_API_URL}?code=${code}`);
             const data = await response.json();
 
-            if (data.discountPercentage > 0) {
-                setDiscount({ percentage: data.discountPercentage, code: code });
-                setDiscountMessage({ text: t('success', { percent: data.discountPercentage }), type: 'success' });
+            if (data.valid && data.target_plan_id) {
+                // Update to discounted Plan ID
+                setCurrentPlanId(data.target_plan_id);
+                setDiscountMessage({ text: data.message || t('success'), type: 'success' });
             } else {
-                setDiscount({ percentage: 0, code: "" });
-                setDiscountMessage({ text: t('invalid'), type: 'error' });
+                // Reset to default Plan ID
+                setCurrentPlanId(currentPlan.id);
+                setDiscountMessage({ text: data.message || t('invalid'), type: 'error' });
             }
         } catch (e) {
-            console.error(e);
+            console.error('Discount validation error:', e);
             setDiscountMessage({ text: t('error'), type: 'error' });
         } finally {
             setIsLoadingDiscount(false);
@@ -85,7 +83,7 @@ export default function PaymentPage() {
 
     // Render PayPal Buttons
     const renderPayPalButtons = () => {
-        if (!window.paypal || !paypalRef.current) return;
+        if (!window.paypal || !paypalRef.current || !currentPlanId) return;
 
         // Clear existing buttons
         paypalRef.current.innerHTML = '';
@@ -98,29 +96,10 @@ export default function PaymentPage() {
                 label: 'subscribe'
             },
             createSubscription: function (data: any, actions: any) {
-                const subDetails: any = { 'plan_id': currentPlan.id };
-
-                // Handle Discount in Subscription
-                if (discount.percentage > 0) {
-                    const priceStr = finalPrice.toFixed(2);
-                    subDetails.plan = {
-                        billing_info: {
-                            outstanding_balance: { value: '0.00', currency_code: 'USD' },
-                            cycle_executions: [{
-                                tenure_type: 'TRIAL',
-                                sequence: 1,
-                                cycles_completed: 0,
-                                cycles_remaining: 1,
-                                total_cycles: 1,
-                                pricing_scheme: {
-                                    fixed_price: { value: priceStr, currency_code: 'USD' }
-                                }
-                            }]
-                        }
-                    };
-                    subDetails.custom_id = `DISCOUNT:${discount.code}`;
-                }
-                return actions.subscription.create(subDetails);
+                // Dynamic Plan ID - Clean and simple!
+                return actions.subscription.create({
+                    'plan_id': currentPlanId
+                });
             },
             onApprove: function (data: any) {
                 window.location.href = "/thank-you";
@@ -132,10 +111,10 @@ export default function PaymentPage() {
         }).render(paypalRef.current);
     };
 
-    // Re-render PayPal when plan or discount changes
+    // Re-render PayPal when plan or Plan ID changes
     useEffect(() => {
         renderPayPalButtons();
-    }, [selectedPlanKey, discount, finalPrice]);
+    }, [selectedPlanKey, currentPlanId]);
 
 
     return (
@@ -224,7 +203,7 @@ export default function PaymentPage() {
                             {/* Total */}
                             <div className="flex justify-between items-center mt-6 pt-6 border-t border-gray-100">
                                 <span className="font-bold text-gray-700">{t('totalDue')}</span>
-                                <span className="text-2xl font-bold text-green-500">${finalPrice.toFixed(2)}</span>
+                                <span className="text-2xl font-bold text-green-500">${currentPlan.price.toFixed(2)}</span>
                             </div>
                         </div>
 

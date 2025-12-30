@@ -12,7 +12,7 @@
     "totalDue": "Total due today",
     "securePayment": "Secure Payment",
     "paymentDesc": "Complete your subscription safely with PayPal. You can cancel at any time.",
-    "terms": "By proceeding, you agree to our <link>Terms of Service</link>.<br>Your license key will be sent to your PayPal email immediately after payment.",
+    "terms": "By proceeding, you agree to our <link>Terms of Service</link>.<br/>Your license key will be sent to your PayPal email immediately after payment.",
     "ssl": "SSL Secure",
     "privacy": "Data Privacy",
     "sslAlt": "SSL Secure Icon",
